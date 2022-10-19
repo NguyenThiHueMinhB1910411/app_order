@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 import 'package:order_food/screens/home/components/item_card.dart';
+import 'package:order_food/screens/home/details/details-screen.dart';
 
 class ItemList extends StatelessWidget {
   const ItemList({
@@ -17,19 +18,47 @@ class ItemList extends StatelessWidget {
             svgScr: 'assets/images/seafood_pizza.jpg',
             title: "Pizza hải sản",
             shopName: "MacDonald's",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailsScreen();
+                  },
+                ),
+              );
+            },
           ),
           ItemCard(
             svgScr: 'assets/images/seafood_pizza.jpg',
             title: "Pizza hải sản",
             shopName: "MacDonald's",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailsScreen();
+                  },
+                ),
+              );
+            },
           ),
           ItemCard(
             svgScr: 'assets/images/seafood_pizza.jpg',
             title: "Pizza hải sản",
             shopName: "MacDonald's",
-            press: () {},
+            // press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailsScreen();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

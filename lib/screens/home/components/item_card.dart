@@ -33,7 +33,9 @@ class ItemCard extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Future.delayed(Duration.zero, press());
+          },
           child: Column(
             children: [
               Column(

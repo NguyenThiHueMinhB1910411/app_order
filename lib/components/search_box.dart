@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 
 class SearchBox extends StatelessWidget {
+  
   final ValueChanged<String> ? onchanged;
   const SearchBox({
+    
     Key? key,
     this.onchanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
+      
       margin: EdgeInsets.all(20),
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
       decoration: BoxDecoration(
