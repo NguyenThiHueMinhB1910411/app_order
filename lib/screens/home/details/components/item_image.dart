@@ -15,9 +15,10 @@ class ItemImage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Image.asset(
       imgSrc,
-      height: size.height * 0.25,
-      width: double.infinity,
-      //  fit: BoxFit.fill,
+      height: 250,
+      width: 250,
+      //width: double.infinity,
+      fit: BoxFit.fill,
     );
   }
 }

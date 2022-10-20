@@ -10,6 +10,7 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 205, 206, 228),
       appBar: detailsAppBar(context),
       body: Body(),
@@ -57,7 +58,7 @@ class ItemInfo extends StatelessWidget {
         children: <Widget>[
           shopeName(name: "Pizza hải sản"),
           TitlePriceRating(
-            name: "Pizzaaaa",
+            name: "Pizza",
             numberOfReview: 24,
             rating: 4,
             price: 15,

@@ -18,7 +18,7 @@ class ItemCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
-      // padding: EdgeInsets.all(20),
+      //padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -51,15 +51,19 @@ class ItemCard extends StatelessWidget {
                         // 'assets/images/seafood_pizza.jpg'
                         svgScr,
                       ),
+
                       width: 100,
                       // width: size.width * 0.18,
                     ),
                   ),
                   Text(title),
                   SizedBox(height: 10),
+                  Padding(padding: EdgeInsets.only(top: 10)),
                   Text(
                     shopName,
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(
+                      fontSize: 12,
+                    ),
                   )
                 ],
               ),
