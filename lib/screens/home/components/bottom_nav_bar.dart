@@ -12,21 +12,19 @@ class BottomNavBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 35),
       height: 75,
       width: double.infinity,
-      decoration: BoxDecoration(color: Color.fromARGB(255, 241, 245, 241), boxShadow: [
-        // BoxShadow(
-        //   offset: Offset(0, -7),
-        //   blurRadius: 33,
-        //   color: Color(0xFF6DAED9).withOpacity(0.11),
-        // )
-      ]),
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
             icon: const Icon(
               Icons.home,
+
               // color: Colors.white,
             ),
+            // style: Border,
             onPressed: () {},
           ),
           IconButton(
@@ -34,7 +32,6 @@ class BottomNavBar extends StatelessWidget {
             // color: Colors.red[900],
             onPressed: () {},
           ),
-          
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             // color: Color.fromARGB(255, 245, 167, 23),

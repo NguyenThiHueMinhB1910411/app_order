@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/sign_up/sign_up.dart';
+import 'package:order_food/screens/sign_in/app_bar_sign_in.dart';
 
-class SignInScreen extends StatelessWidget {
-  static String routeName = "/sign_in";
+class SignUpScreen extends StatelessWidget {
+  static String routeName = "/sign_up";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBarsignIn(context),
       resizeToAvoidBottomInset: false,
       //backgroundColor: Colors.white,
       body: Container(
@@ -19,29 +20,72 @@ class SignInScreen extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 300,
-              width: 180,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/theme_sign_in.jpg'),
-                ),
+              margin: EdgeInsets.only(top: 150),
+              child: Text(
+                'Sign up',
+                style: TextStyle(color: Colors.black, fontSize: 30),
               ),
+
+              // height: 300,
+              // width: 150,
+              // decoration: BoxDecoration(
+              //   image: DecorationImage(
+              //     image: AssetImage('assets/images/theme_sign_in.jpg'),
+              //   ),
+              // ),
             ),
-            Text(
-              "Sign in",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+
+            // Container(
+            //   height: 100,
+            //   child: Text(
+            //     "Sign up",
+            //     style: TextStyle(
+            //       color: Colors.black,
+            //       fontSize: 20,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 0.0),
               child: Container(
+                // margin: EdgeInsets.only(right: 20, top: 20),
                 margin: EdgeInsets.only(right: 20, top: 20, left: 20),
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
+                    // TextFormField(
+                    //   decoration: InputDecoration(
+                    //     labelText: "Email",
+                    //     hintText: "Enter your email",
+                    //   ),
+                    //   textAlign: TextAlign.center,
+                    // ),
+                    Container(
+                        margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                        //
+                        padding: EdgeInsets.only(
+                            top: 5, bottom: 5, left: 20, right: 20),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.grey[100],
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(4, 1),
+                                blurRadius: 50,
+                                color: Color.fromARGB(255, 250, 246, 246),
+                              )
+                            ]),
+                        child: TextField(
+                          cursorColor: Colors.green,
+                          decoration: InputDecoration(
+                            icon: Icon(
+                              Icons.email,
+                              color: Colors.green[500],
+                            ),
+                            hintText: "Enter your email",
+                          ),
+                        )),
                     Container(
                         margin: EdgeInsets.only(left: 20, right: 20, top: 25),
                         padding: EdgeInsets.only(left: 20, right: 20),
@@ -91,16 +135,16 @@ class SignInScreen extends StatelessWidget {
                             hintText: "Enter your passwork",
                           ),
                         )),
-                    Container(
-                      margin: EdgeInsets.only(top: 20, right: 20),
-                      alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        child: Text("Forget Password?"),
-                        onTap: () => {},
-                      ),
-                    ),
+                    // Container(
+                    //   margin: EdgeInsets.only(top: 20, right: 20),
+                    //   alignment: Alignment.centerRight,
+                    //   child: GestureDetector(
+                    //     child: Text("Forget Password?"),
+                    //     onTap: () => {},
+                    //   ),
+                    // ),
                     GestureDetector(
-                      // onTap: () => {},
+                      //onTap: () => {},
                       onTap: () => {
                         Navigator.push(
                           context,
@@ -112,7 +156,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       },
                       child: Container(
-                        margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                        margin: EdgeInsets.only(left: 20, right: 20, top: 50),
                         alignment: Alignment.center,
                         height: 50,
                         decoration: BoxDecoration(
@@ -120,39 +164,14 @@ class SignInScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Text(
-                          "SIGN IN",
+                          "SIGN UP",
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20, right: 20),
-                      alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        child: Text(
-                          "Register now!",
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                          ),
+                    )
 
-                          // textAlign: TextAlign.center,
-                        ),
-                        onTap: () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return SignUpScreen();
-                              },
-                            ),
-                          ),
-                        },
-                      ),
-                    ),
                     // TextField(
                     //   cursorColor: Colors.green,
                     //   decoration: InputDecoration(

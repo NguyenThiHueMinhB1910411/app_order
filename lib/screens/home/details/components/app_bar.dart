@@ -10,9 +10,9 @@ AppBar detailsAppBar(BuildContext context) {
       ),
       onPressed: () {
         Navigator.pop(context);
-        
       },
     ),
+    backgroundColor: Colors.green,
     actions: <Widget>[
       IconButton(
         icon: Icon(Icons.share_rounded),

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class OrderButton extends StatelessWidget {
@@ -19,7 +17,7 @@ class OrderButton extends StatelessWidget {
       width: size.width * 0.8,
       // no phu 80% tong chieu rong
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.green,
         borderRadius: BorderRadius.circular(10),
       ),
 
@@ -44,7 +42,21 @@ class OrderButton extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
-                )
+                ),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: Icon(
+                //     Icons.add,
+                //     color: Colors.green,
+                //   ),
+                // ),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: Icon(
+                //     Icons.remove,
+                //     color: Colors.red,
+                //   ),
+                // ),
               ],
             ),
           ),
