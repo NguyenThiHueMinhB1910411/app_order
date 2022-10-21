@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/welcomePage.dart';
+import 'package:order_food/screens/sign_in/sign_in_screen.dart';
+import 'package:order_food/screens/sign_up/sign_up.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -21,28 +25,50 @@ class BottomNavBar extends StatelessWidget {
           IconButton(
             icon: const Icon(
               Icons.home,
-
-              // color: Colors.white,
             ),
-            // style: Border,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return WelcomePage();
+                  },
+                ),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.favorite),
-            // color: Colors.red[900],
             onPressed: () {},
           ),
           IconButton(
             icon: const Icon(Icons.shopping_cart),
-            // color: Color.fromARGB(255, 245, 167, 23),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SignInScreen();
+                  },
+                ),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(
               Icons.person,
               // color: Colors.green,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SignUpScreen();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

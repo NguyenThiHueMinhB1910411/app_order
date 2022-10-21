@@ -7,6 +7,7 @@ import 'package:order_food/screens/home/components/category_list.dart';
 import 'package:order_food/screens/home/components/discount_card.dart';
 import 'package:order_food/screens/home/components/item_card.dart';
 import 'package:order_food/screens/home/components/item_list.dart';
+import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 
 class BodyScreen extends StatelessWidget {
   @override
@@ -20,6 +21,7 @@ class BodyScreen extends StatelessWidget {
         CategoryList(),
         ItemList(),
         DiscountCard(),
+        //BottomNavBar(),
       ],
     );
   }

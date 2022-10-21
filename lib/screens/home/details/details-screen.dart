@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 import 'package:order_food/screens/home/components/body.dart';
+import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/components/item_image.dart';
 import 'package:order_food/screens/home/details/components/order_button.dart';
@@ -14,6 +15,7 @@ class DetailsScreen extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 205, 206, 228),
       appBar: detailsAppBar(context),
       body: Body(),
+      //bottomNavigationBar: BottomNavBar(),
     );
   }
 }
@@ -25,7 +27,7 @@ class Body extends StatelessWidget {
     return Column(
       children: <Widget>[
         ItemImage(
-          imgSrc: "assets/images/seafood_pizza.jpg",
+          imgSrc: "assets/images/pizza_img.webp",
           size: size,
         ),
         Expanded(

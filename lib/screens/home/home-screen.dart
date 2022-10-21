@@ -16,5 +16,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(),
       body: BodyScreen(),
     );
+    
   }
+  
 }

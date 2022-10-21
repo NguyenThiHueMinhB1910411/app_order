@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
+import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/welcomePage.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -88,7 +90,7 @@ class SignInScreen extends StatelessWidget {
                               Icons.key,
                               color: Colors.green[500],
                             ),
-                            hintText: "Enter your passwork",
+                            hintText: "Enter your password",
                           ),
                         )),
                     Container(
@@ -106,7 +108,7 @@ class SignInScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return HomeScreen();
+                              return WelcomePage();
                             },
                           ),
                         ),
@@ -171,6 +173,7 @@ class SignInScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
 
       // appBar: AppBar(
       //   title: Text("Sign in"),

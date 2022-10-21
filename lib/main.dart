@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/welcomePage.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 
@@ -12,13 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       title: 'Food App',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
+
         scaffoldBackgroundColor: Colors.white,
-        // appBarTheme: AppBarTheme(
-        //   color: Colors.white,
-        //   elevation: 0,
+
         //   iconTheme: IconThemeData(color: Colors.black),
         // ),
         textTheme: TextTheme(
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
       ),
 
       //home: HomeScreen(),
-      home: SignInScreen(),
-      //home: SignUpScreen(),
+      //home: SignInScreen(),
+      //bottomNavigationBar: BottomNavBar(),
+      home: WelcomePage(),
     );
   }
 }
