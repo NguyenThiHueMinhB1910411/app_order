@@ -4,10 +4,11 @@ import 'package:order_food/models/Category.dart';
 import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
+import 'package:order_food/screens/home/components/categories_list.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 
-class WelcomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const outlineInputBorder = const OutlineInputBorder(
@@ -27,15 +28,7 @@ class WelcomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Text(
-                //   "Explore",
-                //   style: Theme.of(context).textTheme.headline4!.copyWith(
-                //       fontWeight: FontWeight.w500, color: Colors.black),
-                // ),
-                // const Text(ss
-                //   "best foods for you",
-                //   style: TextStyle(fontSize: 18),
-                // ),
+                //Banner(),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Form(
@@ -45,8 +38,6 @@ class WelcomePage extends StatelessWidget {
                         filled: true,
                         fillColor: Colors.white,
                         border: outlineInputBorder,
-
-                        //zenabledBorder: outlineInputBorder,
                         focusedBorder: outlineInputBorder,
                         prefixIcon: Padding(
                           padding: const EdgeInsets.all(12),
@@ -73,15 +64,30 @@ class WelcomePage extends StatelessWidget {
                         )),
                   )),
                 ),
+
+                // ////////////
+                Banner(),
+                /////////
                 const Categories(),
                 const SizedBox(
                   height: 10,
                 ),
-                NewArrival(),
+                TraSua(),
                 const SizedBox(
                   height: 10,
                 ),
-                Popular(),
+                GaRan(),
+                const SizedBox(
+                  height: 10,
+                ),
+                Pizza(),
+                const SizedBox(
+                  height: 10,
+                ),
+                Mi(),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ),
@@ -90,10 +96,21 @@ class WelcomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(),
     );
   }
+
+  Container Banner() {
+    return Container(
+      child: Container(
+          // padding: EdgeInsets.only(bottom: 20),
+          margin: EdgeInsets.only(bottom: 30),
+          //width: 700,
+          //height: 300,
+          child: Image.asset("assets/images/banner_3.jpg")),
+    );
+  }
 }
 
-class NewArrival extends StatelessWidget {
-  const NewArrival({
+class TraSua extends StatelessWidget {
+  const TraSua({
     Key? key,
   }) : super(key: key);
 
@@ -102,7 +119,7 @@ class NewArrival extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(
-          title: "New arrival",
+          title: "Trà sữa",
           pressSeeAll: () {},
         ),
         SingleChildScrollView(
@@ -138,8 +155,8 @@ class NewArrival extends StatelessWidget {
   }
 }
 
-class Popular extends StatelessWidget {
-  const Popular({
+class GaRan extends StatelessWidget {
+  const GaRan({
     Key? key,
   }) : super(key: key);
 
@@ -148,7 +165,7 @@ class Popular extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(
-          title: "Popular",
+          title: "Gà rán",
           pressSeeAll: () {},
         ),
         SingleChildScrollView(
@@ -164,6 +181,98 @@ class Popular extends StatelessWidget {
                         title: show_product[index].title,
                         price: show_product[index].price,
                         bgColor: show_product[index].bgColor,
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DetailsScreen();
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    )),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class Pizza extends StatelessWidget {
+  const Pizza({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SectionTitle(
+          title: "Trà sữa",
+          pressSeeAll: () {},
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: List.generate(
+                show_product.length,
+                (index) => Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: ProductCard(
+                        image: show_product[index].image,
+                        title: show_product[index].title,
+                        price: show_product[index].price,
+                        bgColor: show_product[index].bgColor,
+                        //press: () {},
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DetailsScreen();
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    )),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class Mi extends StatelessWidget {
+  const Mi({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SectionTitle(
+          title: "Trà sữa",
+          pressSeeAll: () {},
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: List.generate(
+                show_product.length,
+                (index) => Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: ProductCard(
+                        image: show_product[index].image,
+                        title: show_product[index].title,
+                        price: show_product[index].price,
+                        bgColor: show_product[index].bgColor,
+                        //press: () {},
                         press: () {
                           Navigator.push(
                             context,
@@ -275,45 +384,6 @@ class SectionTitle extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class Categories extends StatelessWidget {
-  const Categories({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-          children: List.generate(
-        show_categories.length,
-        (index) => Padding(
-          padding: const EdgeInsets.only(right: 20),
-          child: CategoryCard(
-            // image: "assets/images/bubble_tea.webp",
-            //title: "Trà sữa",
-            image: show_categories[index].image,
-            title: show_categories[index].title,
-            // bgColor: show_categories[index].bgColor,
-
-            //press: () {},
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return DetailsScreen();
-                  },
-                ),
-              );
-            },
-          ),
-        ),
-      )),
     );
   }
 }

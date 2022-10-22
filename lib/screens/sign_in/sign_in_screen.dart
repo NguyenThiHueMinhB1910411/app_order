@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/home/welcomePage.dart';
+//import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -16,7 +16,9 @@ class SignInScreen extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        
         child: Column(
+        
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -108,7 +110,7 @@ class SignInScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return WelcomePage();
+                              return HomeScreen();
                             },
                           ),
                         ),

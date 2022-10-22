@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
-import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/home/welcomePage.dart';
+//import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_in/app_bar_sign_in.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -153,7 +153,7 @@ class SignUpScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return WelcomePage();
+                              return HomeScreen();
                             },
                           ),
                         ),

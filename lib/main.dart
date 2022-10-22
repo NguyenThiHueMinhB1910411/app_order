@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
-import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/home/welcomePage.dart';
+//import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       //home: HomeScreen(),
       //home: SignInScreen(),
       //bottomNavigationBar: BottomNavBar(),
-      home: WelcomePage(),
+      home: HomeScreen(),
     );
   }
 }

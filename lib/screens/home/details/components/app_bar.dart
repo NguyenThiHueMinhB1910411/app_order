@@ -14,10 +14,10 @@ AppBar detailsAppBar(BuildContext context) {
     ),
     backgroundColor: Colors.green,
     actions: <Widget>[
-      IconButton(
-        icon: Icon(Icons.share_rounded),
-        onPressed: () {},
-      ),
+      // IconButton(
+      //   icon: Icon(Icons.share_rounded),
+      //   onPressed: () {},
+      // ),
       IconButton(
         icon: Icon(Icons.more_horiz),
         onPressed: () {},

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/home/welcomePage.dart';
+//import 'package:order_food/screens/home/home-screen.dart';
+import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 
@@ -31,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return WelcomePage();
+                    return HomeScreen();
                   },
                 ),
               );
@@ -39,7 +39,16 @@ class BottomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.favorite),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SignInScreen();
+                  },
+                ),
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.shopping_cart),
