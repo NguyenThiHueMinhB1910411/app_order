@@ -15,37 +15,37 @@ class Product {
 List<Product> show_product = [
   //Tra sua
   Product(
-    image: "assets/images/bubble_tea.webp",
+    image: "assets/images/tra_sua_truyen_thong.png",
     title: "Trà sữa truyền thống",
     price: 25000,
     bgColor: const Color(0xFFEFEFF2),
   ),
   Product(
-    image: "assets/images/bubble_tea.webp",
+    image: "assets/images/tra_sua_matcha.png",
     title: "Trà sữa matcha",
     price: 35000,
     bgColor: const Color(0xFFEFEFF2),
   ),
   Product(
-    image: "assets/images/bubble_tea.webp",
-    title: "Trà sữa thái đỏ",
+    image: "assets/images/tra_sua_tran_chau_hoang_kim.png",
+    title: "Trà sữa trân châu hoàng kim",
     price: 35000,
     bgColor: const Color(0xFFEFEFF2),
   ),
   Product(
-    image: "assets/images/bubble_tea.webp",
-    title: "Trà sữa thái xanh",
+    image: "assets/images/tra_sua_choco.png",
+    title: "Trà sữa sô cô la",
     price: 30000,
     bgColor: const Color(0xFFEFEFF2),
   ),
   Product(
-    image: "assets/images/bubble_tea.webp",
+    image: "assets/images/tra_sua_dau.png",
     title: "Trà sữa dâu",
     price: 28000,
     bgColor: const Color(0xFFEFEFF2),
   ),
   Product(
-    image: "assets/images/bubble_tea.webp",
+    image: "assets/images/tra_sua_dao.png",
     title: "Trà sữa đào",
     price: 25000,
     bgColor: const Color(0xFFEFEFF2),

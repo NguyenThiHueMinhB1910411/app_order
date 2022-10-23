@@ -18,7 +18,7 @@ class BodyScreen extends StatelessWidget {
         SearchBox(
           onchanged: (value) {},
         ),
-        CategoryList(),
+        //CategoryList(),
         ItemList(),
         DiscountCard(),
         //BottomNavBar(),
