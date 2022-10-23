@@ -4,7 +4,8 @@ import 'package:order_food/models/Category.dart';
 import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/components/categories_list.dart';
+import 'package:order_food/screens/home/components/category.dart';
+import 'package:order_food/screens/home/components/category_list.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 
@@ -76,15 +77,15 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                GaRan(),
+                Tra(),
                 const SizedBox(
                   height: 10,
                 ),
-                Pizza(),
+                DaXay(),
                 const SizedBox(
                   height: 10,
                 ),
-                Mi(),
+                Latte(),
                 const SizedBox(
                   height: 10,
                 ),
@@ -104,7 +105,7 @@ class HomeScreen extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 30),
           //width: 700,
           //height: 300,
-          child: Image.asset("assets/images/banner_3.jpg")),
+          child: Image.asset("assets/images/banner_milk_tea_1.jpg")),
     );
   }
 }
@@ -155,8 +156,8 @@ class TraSua extends StatelessWidget {
   }
 }
 
-class GaRan extends StatelessWidget {
-  const GaRan({
+class Tra extends StatelessWidget {
+  const Tra({
     Key? key,
   }) : super(key: key);
 
@@ -165,7 +166,7 @@ class GaRan extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(
-          title: "Gà rán",
+          title: "Trà",
           pressSeeAll: () {},
         ),
         SingleChildScrollView(
@@ -200,8 +201,8 @@ class GaRan extends StatelessWidget {
   }
 }
 
-class Pizza extends StatelessWidget {
-  const Pizza({
+class DaXay extends StatelessWidget {
+  const DaXay({
     Key? key,
   }) : super(key: key);
 
@@ -210,7 +211,7 @@ class Pizza extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(
-          title: "Trà sữa",
+          title: "Đá xay",
           pressSeeAll: () {},
         ),
         SingleChildScrollView(
@@ -226,7 +227,6 @@ class Pizza extends StatelessWidget {
                         title: show_product[index].title,
                         price: show_product[index].price,
                         bgColor: show_product[index].bgColor,
-                        //press: () {},
                         press: () {
                           Navigator.push(
                             context,
@@ -246,8 +246,8 @@ class Pizza extends StatelessWidget {
   }
 }
 
-class Mi extends StatelessWidget {
-  const Mi({
+class Latte extends StatelessWidget {
+  const Latte({
     Key? key,
   }) : super(key: key);
 
@@ -256,7 +256,7 @@ class Mi extends StatelessWidget {
     return Column(
       children: [
         SectionTitle(
-          title: "Trà sữa",
+          title: "Latte",
           pressSeeAll: () {},
         ),
         SingleChildScrollView(
@@ -272,7 +272,6 @@ class Mi extends StatelessWidget {
                         title: show_product[index].title,
                         price: show_product[index].price,
                         bgColor: show_product[index].bgColor,
-                        //press: () {},
                         press: () {
                           Navigator.push(
                             context,
@@ -395,6 +394,7 @@ class CategoryCard extends StatelessWidget {
     required this.title,
     //required this.bgColor,
     required this.press,
+    required String type,
   }) : super(key: key);
 
   final String image, title;

@@ -16,18 +16,16 @@ class SignInScreen extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        
         child: Column(
-        
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 300,
-              width: 180,
+              width: 150,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/theme_sign_in.jpg'),
+                  image: AssetImage('assets/images/green_milk_tea_canva.png'),
                 ),
               ),
             ),

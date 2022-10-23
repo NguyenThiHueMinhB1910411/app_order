@@ -4,7 +4,7 @@ import 'package:order_food/screens/home/components/body.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/components/item_image.dart';
-import 'package:order_food/screens/home/details/components/order_button.dart';
+import 'package:order_food/screens/home/details/components/add_to_card.dart';
 import 'package:order_food/screens/home/details/components/title_price_rating.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
     return Column(
       children: <Widget>[
         ItemImage(
-          imgSrc: "assets/images/pizza_img.webp",
+          imgSrc: "assets/images/tra_sua_truyen_thong.png",
           size: size,
         ),
         Expanded(

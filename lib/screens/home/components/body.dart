@@ -1,31 +1,31 @@
-import 'package:flutter/material.dart';
-import 'package:order_food/constants.dart';
+// import 'package:flutter/material.dart';
+// import 'package:order_food/constants.dart';
 
-import 'package:order_food/components/search_box.dart';
-import 'package:order_food/screens/home/components/category_item.dart';
-import 'package:order_food/screens/home/components/category_list.dart';
-import 'package:order_food/screens/home/components/discount_card.dart';
-import 'package:order_food/screens/home/components/item_card.dart';
-import 'package:order_food/screens/home/components/item_list.dart';
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
+// import 'package:order_food/components/search_box.dart';
+// import 'package:order_food/screens/home/components/category_item.dart';
+// import 'package:order_food/screens/home/components/category_list.dart';
+// import 'package:order_food/screens/home/components/discount_card.dart';
+// import 'package:order_food/screens/home/components/item_card.dart';
+// import 'package:order_food/screens/home/components/item_list.dart';
+// import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 
-class BodyScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        SearchBox(
-          onchanged: (value) {},
-        ),
-        //CategoryList(),
-        ItemList(),
-        DiscountCard(),
-        //BottomNavBar(),
-      ],
-    );
-  }
-}
+// class BodyScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: <Widget>[
+//         SearchBox(
+//           onchanged: (value) {},
+//         ),
+//         CategoryList(),
+//         ItemList(),
+//         DiscountCard(),
+//         BottomNavBar(),
+//       ],
+//     );
+//   }
+// }
 
 
 

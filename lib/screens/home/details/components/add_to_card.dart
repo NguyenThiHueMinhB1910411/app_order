@@ -17,7 +17,7 @@ class OrderButton extends StatelessWidget {
       width: size.width * 0.8,
       // no phu 80% tong chieu rong
       decoration: BoxDecoration(
-        color: Colors.green,
+        color: Color.fromARGB(255, 70, 187, 136),
         borderRadius: BorderRadius.circular(10),
       ),
 
@@ -36,7 +36,7 @@ class OrderButton extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  "Order Now",
+                  "Add to cart",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

@@ -20,6 +20,7 @@ class ItemImage extends StatelessWidget {
       imgSrc,
       height: 250,
       width: 250,
+      
       //width: double.infinity,
       fit: BoxFit.fill,
     );

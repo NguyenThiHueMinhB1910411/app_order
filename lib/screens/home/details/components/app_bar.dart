@@ -13,11 +13,8 @@ AppBar detailsAppBar(BuildContext context) {
       },
     ),
     backgroundColor: Colors.green,
+    //backgroundColor: Color.fromARGB(255, 70, 187, 136),
     actions: <Widget>[
-      // IconButton(
-      //   icon: Icon(Icons.share_rounded),
-      //   onPressed: () {},
-      // ),
       IconButton(
         icon: Icon(Icons.more_horiz),
         onPressed: () {},

@@ -6,6 +6,7 @@ AppBar homeAppBar(BuildContext context) {
   return AppBar(
     centerTitle: true,
     backgroundColor: Colors.green,
+    //backgroundColor: Color.fromARGB(255, 70, 187, 136),
     elevation: 0,
     leading: IconButton(
       icon: const Icon(Icons.menu),
@@ -25,7 +26,7 @@ AppBar homeAppBar(BuildContext context) {
             style: TextStyle(color: Colors.white),
           ),
           TextSpan(
-            text: "Food",
+            text: "Drirk",
             style: TextStyle(color: kPrimaryColor),
           ),
         ],

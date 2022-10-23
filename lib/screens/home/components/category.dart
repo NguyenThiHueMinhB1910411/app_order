@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/models/Category.dart';
+import 'package:order_food/screens/home/components/category_list.dart';
+import 'package:order_food/screens/home/components/column_category_list.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 
@@ -18,11 +20,9 @@ class Categories extends StatelessWidget {
         (index) => Padding(
           padding: const EdgeInsets.only(right: 20),
           child: CategoryCard(
-            // image: "assets/images/bubble_tea.webp",
-            //title: "Trà sữa",
             image: show_categories[index].image,
             title: show_categories[index].title,
-            // bgColor: show_categories[index].bgColor,
+            type: show_categories[index].type,
 
             //press: () {},
             press: () {
@@ -30,7 +30,7 @@ class Categories extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return DetailsScreen();
+                    return ShowCategoryList();
                   },
                 ),
               );
