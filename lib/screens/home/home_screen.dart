@@ -6,6 +6,7 @@ import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/components/category.dart';
 import 'package:order_food/screens/home/components/category_list.dart';
+import 'package:order_food/screens/home/components/column_category_list.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 
@@ -376,7 +377,17 @@ class SectionTitle extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 )),
         TextButton(
-          onPressed: pressSeeAll,
+          // onPressed: pressSeeAll,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return ShowCategoryList();
+                },
+              ),
+            );
+          },
           child: Text(
             "See All",
             style: TextStyle(color: Colors.black54),
