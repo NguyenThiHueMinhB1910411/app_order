@@ -53,18 +53,20 @@ class AllProductInListItemColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Text(
-        //   "Trà sữa",
-        //   style: TextStyle(),
-        // ),
-        SectionTitle(
-          title: "Trà sữa",
-          pressSeeAll: () {},
+        Text(
+          "Trà sữa",
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.w200, fontSize: 50),
         ),
+        // SectionTitle(
+        //   title: "Trà sữaaaa",
+        //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           : () {},
+        // ),
         SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            //  crossAxisAlignment: CrossAxisAlignment.center,
             children: List.generate(
                 show_product.length,
                 (index) => Padding(

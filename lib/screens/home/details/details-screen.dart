@@ -12,6 +12,7 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+
       backgroundColor: Color.fromARGB(255, 205, 206, 228),
       appBar: detailsAppBar(context),
       body: Body(),
