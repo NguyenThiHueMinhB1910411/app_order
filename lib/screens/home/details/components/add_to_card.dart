@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/home/cart/cart_screen.dart';
+import 'package:order_food/screens/home/cart/cart_screen.dart';
 
 class OrderButton extends StatelessWidget {
   const OrderButton({
@@ -25,13 +27,37 @@ class OrderButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: press(),
+          // onTap: press(){
+          //   Navigator.push(context,
+          //   MaterialPageRoute(
+          //     builder: (context){
+          //       return CartScreen();
+          //     }
+          //     ),
+
+          //   );
+          // },
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(
-                  Icons.shopping_bag,
+                // Icon(
+                //   Icons.shopping_bag,
+                //   color: Colors.white,
+                // ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return CartScreen();
+                        },
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.shopping_bag),
                   color: Colors.white,
                 ),
                 SizedBox(width: 10),
@@ -43,20 +69,6 @@ class OrderButton extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: Icon(
-                //     Icons.add,
-                //     color: Colors.green,
-                //   ),
-                // ),
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: Icon(
-                //     Icons.remove,
-                //     color: Colors.red,
-                //   ),
-                // ),
               ],
             ),
           ),

@@ -30,7 +30,6 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Banner(),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Form(
@@ -60,6 +59,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               child: Icon(
                                 Icons.filter_alt,
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -137,7 +137,6 @@ class TraSua extends StatelessWidget {
                         title: show_product[index].title,
                         price: show_product[index].price,
                         bgColor: show_product[index].bgColor,
-                        //press: () {},
                         press: () {
                           Navigator.push(
                             context,

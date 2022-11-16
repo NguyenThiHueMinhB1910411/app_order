@@ -25,17 +25,10 @@ class ShowCategoryList extends StatelessWidget {
               const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
+            child: 
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Text(
-                //   "Trà sữa",
-                //   style: TextStyle(
-                //       fontWeight: FontWeight.w300,
-                //       fontSize: 60,
-                //       color: Colors.black),
-                // ),
-                //ListView(),
                 AllProductInListItemColumn(),
                 const SizedBox(
                   height: 10,

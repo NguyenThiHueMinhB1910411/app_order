@@ -26,7 +26,7 @@ AppBar homeAppBar(BuildContext context) {
             style: TextStyle(color: Colors.white),
           ),
           TextSpan(
-            text: "Drirk",
+            text: "Drink",
             style: TextStyle(color: kPrimaryColor),
           ),
         ],

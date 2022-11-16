@@ -19,18 +19,11 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
 
         scaffoldBackgroundColor: Colors.white,
-
-        //   iconTheme: IconThemeData(color: Colors.black),
-        // ),
         textTheme: TextTheme(
           bodyText1: TextStyle(color: ksecondaryColor),
           bodyText2: TextStyle(color: ksecondaryColor),
         ),
       ),
-
-      //home: HomeScreen(),
-      //home: SignInScreen(),
-      //bottomNavigationBar: BottomNavBar(),
       home: HomeScreen(),
     );
   }

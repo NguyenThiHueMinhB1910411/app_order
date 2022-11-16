@@ -35,13 +35,9 @@ class TitlePriceRating extends StatelessWidget {
                         children: List.generate(5, (index) {
                       return Icon(
                         Icons.star,
-                        
                         color: Colors.yellow[700],
-                        
                       );
-                      
                     })),
-                    
                     SizedBox(width: 10),
                     Text("$numberOfReview reviews"),
                   ],
@@ -54,11 +50,6 @@ class TitlePriceRating extends StatelessWidget {
 
             child: Container(
               alignment: Alignment.topCenter,
-              // padding: EdgeInsets.symmetric(vertical: 15),
-              // height: 66,
-              // width: 65,
-              // color: Colors.blue,
-
               child: Text(
                 "95.000 VND",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
