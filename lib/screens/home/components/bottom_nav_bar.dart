@@ -6,7 +6,6 @@ import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 import 'package:order_food/screens/home/cart/cart_screen.dart';
 import 'package:order_food/screens/auth/auth_info.dart';
-import 'package:order_food/screens/users/user_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({

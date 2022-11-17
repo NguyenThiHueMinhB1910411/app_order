@@ -52,6 +52,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
+import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 
 import 'auth_card.dart';
@@ -65,14 +66,15 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: detailsAppBar(context),
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: <Widget>[
           Container(
             height: 300,
-            decoration: BoxDecoration(
-              color: Colors.green[500],
-            ),
+            // decoration: BoxDecoration(
+            //   color: Colors.green[500],
+            // ),
             child: Card(
                 // child: Image.asset(
                 //   'assets/images/green_milk_tea_canva.png',
