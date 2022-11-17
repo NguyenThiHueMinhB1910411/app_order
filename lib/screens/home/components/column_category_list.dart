@@ -19,29 +19,32 @@ class AllProductInListItemColumn extends StatelessWidget {
         ),
         SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: List.generate(
-                show_product.length,
-                (index) => Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: ProductCard(
-                        image: show_product[index].image,
-                        title: show_product[index].title,
-                        price: show_product[index].price,
-                        bgColor: show_product[index].bgColor,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return DetailsScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                    )),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 80),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                  show_product.length,
+                  (index) => Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: ProductCard(
+                          image: show_product[index].image,
+                          title: show_product[index].title,
+                          price: show_product[index].price,
+                          bgColor: show_product[index].bgColor,
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      )),
+            ),
           ),
         )
       ],

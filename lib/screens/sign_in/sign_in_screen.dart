@@ -65,7 +65,7 @@ class SignInScreen extends StatelessWidget {
                               Icons.phone_android_outlined,
                               color: Colors.green[500],
                             ),
-                            hintText: "Enter your phone number",
+                            hintText: "Enter your email",
                           ),
                         )),
 

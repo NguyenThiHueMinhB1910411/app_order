@@ -11,6 +11,8 @@ import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  //
+  static const routeName = '/home';
   @override
   Widget build(BuildContext context) {
     const outlineInputBorder = const OutlineInputBorder(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/auth/auth_screen.dart';
 //import 'package:order_food/screens/home/home-screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
+import 'package:order_food/screens/home/cart/cart_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -44,7 +46,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignInScreen();
+                    return AuthScreen();
                   },
                 ),
               );
@@ -57,7 +59,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignInScreen();
+                    return CartScreen();
                   },
                 ),
               );
@@ -73,7 +75,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignUpScreen();
+                    return SignInScreen();
                   },
                 ),
               );

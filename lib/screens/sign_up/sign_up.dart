@@ -110,7 +110,7 @@ class SignUpScreen extends StatelessWidget {
                               Icons.phone_android_outlined,
                               color: Colors.green[500],
                             ),
-                            hintText: "Enter your phone number",
+                            hintText: "Enter your phone password",
                           ),
                         )),
 
@@ -135,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
                               Icons.key,
                               color: Colors.green[500],
                             ),
-                            hintText: "Enter your password",
+                            hintText: "Enter your password again",
                           ),
                         )),
                     // Container(
