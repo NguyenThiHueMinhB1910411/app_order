@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/orders/orders_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../auth/auth_manager.dart';
@@ -38,15 +39,15 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
-          // const Divider(),
-          // ListTile(
-          //   leading: const Icon(Icons.payment),
-          //   title: const Text('Orders'),
-          //   onTap: () {
-          //     Navigator.of(context)
-          //         .pushReplacementNamed(OrdersScreen.routeName);
-          //   },
-          // ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.payment),
+            title: const Text('Orders'),
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(OrdersScreen.routeName);
+            },
+          ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.edit),

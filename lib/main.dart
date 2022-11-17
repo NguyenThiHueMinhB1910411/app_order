@@ -54,6 +54,7 @@ import 'dart:async';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
+import 'package:order_food/screens/orders/orders_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/Screens.dart';
 
@@ -86,6 +87,11 @@ class MyApp extends StatelessWidget {
               ),
             ),
             home: HomeScreen(),
+            routes: {
+              CartScreen.routeName: (ctx) => const CartScreen(),
+              OrdersScreen.routeName: (ctx) => const OrdersScreen(),
+              // User
+            },
 
             // home: authManager.isAuth
             //     ? HomeScreen()

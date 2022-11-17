@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/auth/auth_info.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +40,7 @@ class _AuthCardState extends State<AuthCard> {
     try {
       if (_authMode == AuthMode.login) {
         // Log user in
-        
+
         await context.read<AuthManager>().login(
               _authData['email']!,
               _authData['password']!,
@@ -48,7 +49,8 @@ class _AuthCardState extends State<AuthCard> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return HomeScreen();
+              // return HomeScreen();
+              return AuthInfo();
             },
           ),
         );

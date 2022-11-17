@@ -8,7 +8,7 @@
 // import 'package:order_food/screens/home/details/components/title_price_rating.dart';
 
 // class CartScreen extends StatelessWidget {
-  
+
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
@@ -176,7 +176,8 @@ import 'package:order_food/screens/home/details/components/add_to_card.dart';
 import 'package:order_food/screens/home/details/components/title_price_rating.dart';
 
 class CartScreen extends StatelessWidget {
-  
+  static const routeName = '/cart';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -200,7 +201,6 @@ class CartScreen extends StatelessWidget {
             CartItem(),
             CartItem(),
             CartItem(),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

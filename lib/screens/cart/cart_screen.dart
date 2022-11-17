@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:myshop/ui/orders/order_manager.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/cart/cart_manager.dart';
+import 'package:order_food/screens/cart/cart_manager.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 // import 'package:provider/provider.dart';
 
@@ -32,7 +32,6 @@ class CartScreen extends StatelessWidget {
       ),
 
       bottomNavigationBar: BottomNavBar(),
-      
     );
   }
 

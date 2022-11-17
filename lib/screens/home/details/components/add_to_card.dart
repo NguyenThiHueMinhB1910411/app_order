@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/screens/home/cart/cart_screen.dart';
+import 'package:order_food/screens/cart/cart_screen.dart';
 
 class OrderButton extends StatelessWidget {
   const OrderButton({
@@ -73,7 +73,7 @@ class OrderButton extends StatelessWidget {
           ),
 
 
-          
+
         ),
       ),
     );

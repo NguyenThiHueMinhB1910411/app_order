@@ -4,7 +4,7 @@ import 'package:order_food/screens/auth/auth_screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
-import 'package:order_food/screens/home/cart/cart_screen.dart';
+import 'package:order_food/screens/cart/cart_screen.dart';
 import 'package:order_food/screens/auth/auth_info.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -47,7 +47,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return AuthScreen();
+                    return AuthInfo();
                   },
                 ),
               );
@@ -76,7 +76,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return AuthInfo();
+                    return AuthScreen();
                   },
                 ),
               );

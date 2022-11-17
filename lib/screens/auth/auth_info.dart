@@ -206,6 +206,8 @@ import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_food/screens/orders/order_manager.dart';
+import 'package:order_food/screens/orders/orders_screen.dart';
 
 class AuthInfo extends StatefulWidget {
   const AuthInfo({super.key});
@@ -241,8 +243,8 @@ class _AuthInfoState extends State<AuthInfo> {
     return Consumer<AuthManager>(
       builder: (context, value, child) {
         return Scaffold(
-          appBar: detailsAppBar(context),
           resizeToAvoidBottomInset: false,
+          appBar: detailsAppBar(context),
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -272,62 +274,6 @@ class _AuthInfoState extends State<AuthInfo> {
                     alignment: Alignment.bottomCenter,
                     child: Column(
                       children: [
-                        Container(
-                            margin:
-                                EdgeInsets.only(left: 20, right: 20, top: 25),
-                            padding: EdgeInsets.only(left: 20, right: 20),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.grey[100],
-                                boxShadow: [
-                                  BoxShadow(
-                                    offset: Offset(4, 1),
-                                    blurRadius: 50,
-                                    color: Color.fromARGB(255, 250, 246, 246),
-                                  )
-                                ]),
-                            child: TextField(
-                              cursorColor: Colors.green,
-                              decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.phone_android_outlined,
-                                  color: Colors.green[500],
-                                ),
-                                hintText: "Enter your email",
-                              ),
-                            )),
-                        Container(
-                            margin:
-                                EdgeInsets.only(left: 20, right: 20, top: 25),
-                            padding: EdgeInsets.only(left: 20, right: 20),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.grey[100],
-                                boxShadow: [
-                                  BoxShadow(
-                                    offset: Offset(4, 1),
-                                    blurRadius: 50,
-                                    color: Color.fromARGB(255, 250, 246, 246),
-                                  )
-                                ]),
-                            child: TextField(
-                              cursorColor: Colors.green,
-                              decoration: InputDecoration(
-                                icon: Icon(
-                                  Icons.key,
-                                  color: Colors.green[500],
-                                ),
-                                hintText: "Enter your password",
-                              ),
-                            )),
-                        Container(
-                          margin: EdgeInsets.only(top: 20, right: 20),
-                          alignment: Alignment.centerRight,
-                          child: GestureDetector(
-                            child: Text("Forget Password?"),
-                            onTap: () => {},
-                          ),
-                        ),
                         GestureDetector(
                           onTap: () => {
                             Navigator.push(
@@ -381,8 +327,69 @@ class _AuthInfoState extends State<AuthInfo> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 20, right: 20),
-                          alignment: Alignment.centerRight,
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                          alignment: Alignment.center,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                SizedBox(width: 10),
+                                Text(
+                                  "Home screen",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Container(
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                          alignment: Alignment.center,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return OrdersScreen();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  icon: const Icon(Icons.badge),
+                                  color: Colors.white,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  "My orders",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
