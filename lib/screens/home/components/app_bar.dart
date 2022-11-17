@@ -34,7 +34,7 @@ AppBar homeAppBar(BuildContext context) {
     ),
     actions: <Widget>[
       IconButton(
-        icon: const Icon(Icons.doorbell),
+        icon: const Icon(Icons.logout),
         onPressed: () {},
       ),
     ],

@@ -76,7 +76,6 @@ class MyApp extends StatelessWidget {
         child: Consumer<AuthManager>(builder: (context, authManager, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-
             title: 'App order',
             theme: ThemeData(
               primaryColor: kPrimaryColor,
@@ -86,23 +85,18 @@ class MyApp extends StatelessWidget {
                 bodyText2: TextStyle(color: ksecondaryColor),
               ),
             ),
-            home: authManager.isAuth
-                ? AuthScreen()
-                // ? HomeScreen()
-                : FutureBuilder(
-                    future: authManager.tryAutoLogin(),
-                    builder: (context, snapshot) {
-                      return snapshot.connectionState == ConnectionState.waiting
-                          ? const SplashScreen()
-                          : const AuthScreen();
-                    },
-                  ),
-            // routes: {
-            //   HomeScreen.routeName: (ctx) => HomeScreen(),
-            // },
-            // home: const SafeArea(
-            //   child: CartScreen(),
-            // ),
+            home: HomeScreen(),
+
+            // home: authManager.isAuth
+            //     ? HomeScreen()
+            //     : FutureBuilder(
+            //         future: authManager.tryAutoLogin(),
+            //         builder: (context, snapshot) {
+            //           return snapshot.connectionState == ConnectionState.waiting
+            //               ? const SplashScreen()
+            //               : HomeScreen();
+            //         },
+            //       ),
           );
         }));
   }
