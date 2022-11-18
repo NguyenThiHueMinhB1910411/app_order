@@ -18,8 +18,7 @@ class CartItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-     Dismissible(
+    return Dismissible(
       key: ValueKey(cardItem.id),
       background: Container(
         color: Theme.of(context).errorColor,
@@ -57,18 +56,18 @@ class CartItemCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
       child: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(2),
         child: ListTile(
           leading: CircleAvatar(
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(2),
               child: FittedBox(
                 child: Text('\$${cardItem.price}'),
               ),
             ),
           ),
           title: Text(cardItem.title),
-          subtitle: Text('ToTal:\$${(cardItem.price * cardItem.quantity)}'),
+          subtitle: Text('ToTal :\$${(cardItem.price * cardItem.quantity)}'),
           trailing: Text('${cardItem.quantity} x'),
         ),
       ),

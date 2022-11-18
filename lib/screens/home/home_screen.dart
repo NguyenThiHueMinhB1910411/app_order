@@ -236,7 +236,7 @@ class DaXay extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return HomeScreen();
+                                return DetailsScreen(show_product[index]);
                                 // return DetailsScreen();
                               },
                             ),
@@ -282,7 +282,7 @@ class Latte extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return HomeScreen();
+                                return DetailsScreen(show_product[index]);
                                 // return DetailsScreen();
                               },
                             ),

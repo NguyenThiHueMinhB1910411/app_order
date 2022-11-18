@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 import 'package:order_food/screens/cart/cart_manager.dart';
-import 'package:order_food/screens/home/components/body.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/components/item_image.dart';
@@ -55,19 +54,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   )),
               child: Column(
                 children: <Widget>[
-                  Text('${widget.product.title}'),
+                  // Text('${widget.product.title}'),
+                  SizedBox(
+                    height: 5,
+                  ),
                   TitlePriceRating(
                     name: widget.product.title,
                     numberOfReview: 24,
                     rating: 4,
                     price: widget.product.price,
+                    description: widget.product.description,
+
                     // onRatingChanged: (){},
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
                   Text(
                     "Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
                     style: TextStyle(height: 1.5, fontSize: 18),
                   ),
-                  SizedBox(height: 160),
+                  SizedBox(height: 115),
                   Container(
                     padding: EdgeInsets.all(10),
                     width: 400,

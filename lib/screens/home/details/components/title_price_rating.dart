@@ -4,6 +4,7 @@ class TitlePriceRating extends StatelessWidget {
   final double price, numberOfReview;
   final double rating;
   final String name;
+  final String description;
   // final ChangeNotifier onRatingChanged;
   const TitlePriceRating({
     Key? key,
@@ -11,6 +12,7 @@ class TitlePriceRating extends StatelessWidget {
     required this.numberOfReview,
     required this.rating,
     required this.name,
+    required this.description,
     // required this.onRatingChanged,
   }) : super(key: key);
 

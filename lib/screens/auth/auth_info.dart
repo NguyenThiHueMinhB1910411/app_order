@@ -248,10 +248,11 @@ class _AuthInfoState extends State<AuthInfo> {
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: Column(
+            child: 
+            Column(
               children: [
                 Container(
-                  height: 300,
+                  height: 250,
                   width: 150,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -263,7 +264,7 @@ class _AuthInfoState extends State<AuthInfo> {
                   auth,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -285,9 +286,10 @@ class _AuthInfoState extends State<AuthInfo> {
                               ),
                             ),
                           },
-                          child: Container(
+                          child:
+                           Container(
                             margin:
-                                EdgeInsets.only(left: 20, right: 20, top: 30),
+                                EdgeInsets.only(left: 20, right: 20, top: 0),
                             alignment: Alignment.center,
                             height: 50,
                             decoration: BoxDecoration(
@@ -295,27 +297,29 @@ class _AuthInfoState extends State<AuthInfo> {
                               borderRadius: BorderRadius.circular(50),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(9.0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   IconButton(
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) {
-                                            return AuthScreen();
-                                          },
-                                        ),
-                                      );
+                                      // Navigator.push(
+                                      //   context,
+                                      //   MaterialPageRoute(
+                                      //     builder: (context) {
+                                      //       return AuthScreen();
+                                      //     },
+                                      //   ),
+                                      // );
                                     },
-                                    icon: const Icon(Icons.logout),
+                                    icon: const Icon(Icons.settings),
                                     color: Colors.white,
                                   ),
-                                  SizedBox(width: 10),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
                                   Text(
-                                    "Logout",
+                                    "Settings",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -327,7 +331,7 @@ class _AuthInfoState extends State<AuthInfo> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                           alignment: Alignment.center,
                           height: 50,
                           decoration: BoxDecoration(
@@ -339,9 +343,14 @@ class _AuthInfoState extends State<AuthInfo> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.help),
+                                  color: Colors.white,
+                                ),
                                 SizedBox(width: 10),
                                 Text(
-                                  "Home screen",
+                                  "Help",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -351,9 +360,10 @@ class _AuthInfoState extends State<AuthInfo> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 8),
+
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                           alignment: Alignment.center,
                           height: 50,
                           decoration: BoxDecoration(
@@ -379,9 +389,48 @@ class _AuthInfoState extends State<AuthInfo> {
                                   icon: const Icon(Icons.badge),
                                   color: Colors.white,
                                 ),
-                                SizedBox(width: 10),
+                                SizedBox(width: 8),
                                 Text(
                                   "My orders",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                          alignment: Alignment.center,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return AuthScreen();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  icon: const Icon(Icons.logout),
+                                  color: Colors.white,
+                                ),
+                                SizedBox(width: 18),
+                                Text(
+                                  "Log out",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,

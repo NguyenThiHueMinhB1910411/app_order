@@ -54,6 +54,7 @@ import 'dart:async';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
+import 'package:order_food/screens/home/welcome_screen.dart';
 import 'package:order_food/screens/orders/orders_screen.dart';
 import 'package:order_food/screens/products/products_manager.dart';
 import 'package:provider/provider.dart';
@@ -96,7 +97,8 @@ class MyApp extends StatelessWidget {
                 bodyText2: TextStyle(color: ksecondaryColor),
               ),
             ),
-            home: HomeScreen(),
+            //home: HomeScreen(),
+            home: WelcomeScreen(),
             routes: {
               CartScreen.routeName: (ctx) => const CartScreen(),
               OrdersScreen.routeName: (ctx) => const OrdersScreen(),
