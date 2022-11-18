@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:order_food/constants.dart';
+import 'package:order_food/screens/shared/app_drawer.dart';
 
 AppBar homeAppBar(BuildContext context) {
   return AppBar(
@@ -10,8 +11,18 @@ AppBar homeAppBar(BuildContext context) {
     elevation: 0,
     leading: IconButton(
       icon: const Icon(Icons.menu),
+
       // icon: SvgPicture.asset("assets/icons/menu.svg"),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return AppDrawer();
+            },
+          ),
+        );
+      },
     ),
     title: RichText(
       textAlign: TextAlign.center,

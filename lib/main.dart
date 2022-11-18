@@ -55,6 +55,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
 import 'package:order_food/screens/orders/orders_screen.dart';
+import 'package:order_food/screens/products/products_manager.dart';
 import 'package:provider/provider.dart';
 import 'screens/Screens.dart';
 
@@ -71,8 +72,17 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(
+            create: (ctx) => ProductsManager(),
+          ),
+          ChangeNotifierProvider(
             create: (ctx) => AuthManager(),
           ),
+          ChangeNotifierProvider(
+            create: (ctx) => CartManager(),
+          ),
+          // ChangeNotifierProvider(
+          //   create: (ctx) => OrdersManager(),
+          // ),
         ],
         child: Consumer<AuthManager>(builder: (context, authManager, child) {
           return MaterialApp(

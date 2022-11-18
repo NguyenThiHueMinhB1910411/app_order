@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import 'package:order_food/screens/cart/cart_manager.dart';
 
 // import 'package:provider/provider.dart';
@@ -13,12 +13,13 @@ class CartItemCard extends StatelessWidget {
   const CartItemCard({
     required this.productId,
     required this.cardItem,
-   // super.key,
+    // super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Dismissible(
+    return 
+     Dismissible(
       key: ValueKey(cardItem.id),
       background: Container(
         color: Theme.of(context).errorColor,
@@ -28,9 +29,7 @@ class CartItemCard extends StatelessWidget {
           horizontal: 15,
           vertical: 4,
         ),
-        // onDismissed: (direction){
-        //   context.read<CartManager>().removeItem(productId);
-        // },
+
         //  LAB4
 
         child: const Icon(
@@ -47,8 +46,7 @@ class CartItemCard extends StatelessWidget {
         );
       },
       onDismissed: (direction) {
-        print('Cart item dismissed');
-        // context.read<CartManager>().removeItem(productId);
+        context.read<CartManager>().removeItem(productId);
       },
       child: buildItemCard(),
     );

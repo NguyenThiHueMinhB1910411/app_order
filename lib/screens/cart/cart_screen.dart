@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/Screens.dart';
 // import 'package:myshop/ui/orders/order_manager.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
@@ -14,7 +15,8 @@ class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    final cart = CartManager();
+    // final cart = CartManager();
+    final cart = context.watch<CartManager>();
 
     return Scaffold(
       appBar: detailsAppBar(context),

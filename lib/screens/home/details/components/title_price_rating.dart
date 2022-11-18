@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TitlePriceRating extends StatelessWidget {
-  final int price, numberOfReview;
+  final double price, numberOfReview;
   final double rating;
   final String name;
   // final ChangeNotifier onRatingChanged;
@@ -51,7 +51,7 @@ class TitlePriceRating extends StatelessWidget {
             child: Container(
               alignment: Alignment.topCenter,
               child: Text(
-                "95.000 VND",
+                "${price} VND",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

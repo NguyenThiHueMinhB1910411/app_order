@@ -144,7 +144,8 @@ class TraSua extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return DetailsScreen();
+                                return DetailsScreen(show_product[index]);
+                                // return DetailsScreen();
                               },
                             ),
                           );
@@ -189,7 +190,8 @@ class Tra extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return DetailsScreen();
+                                //return HomeScreen();
+                                return DetailsScreen(show_product[index]);
                               },
                             ),
                           );
@@ -234,7 +236,8 @@ class DaXay extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return DetailsScreen();
+                                return HomeScreen();
+                                // return DetailsScreen();
                               },
                             ),
                           );
@@ -279,7 +282,8 @@ class Latte extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return DetailsScreen();
+                                return HomeScreen();
+                                // return DetailsScreen();
                               },
                             ),
                           );
@@ -305,7 +309,7 @@ class ProductCard extends StatelessWidget {
 
   final String image, title;
   final Color bgColor;
-  final int price;
+  final double price;
   final VoidCallback press;
 
   @override

@@ -37,7 +37,8 @@ class AllProductInListItemColumn extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return DetailsScreen();
+                                  return DetailsScreen(show_product[index]);
+                                  // return DetailsScreen();
                                 },
                               ),
                             );
