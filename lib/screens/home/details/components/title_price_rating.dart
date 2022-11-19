@@ -53,7 +53,7 @@ class TitlePriceRating extends StatelessWidget {
             child: Container(
               alignment: Alignment.topCenter,
               child: Text(
-                "${price} VND",
+                "\$$price ",
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

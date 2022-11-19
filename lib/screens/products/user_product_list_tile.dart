@@ -80,38 +80,26 @@ class UserProductListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8),
-      child: ListTile(
-        title: Text(product.title),
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(product.image),
-        ),
-        trailing: SizedBox(
-          width: 120,
-          child: Row(
-            children: <Widget>[
-              buildEditButton(context),
-              buildDeleteButton(context),
-            ],
-          ),
+    return ListTile(
+      title: Text(product.title),
+      leading: CircleAvatar(
+        backgroundImage: AssetImage(product.image),
+      ),
+      trailing: SizedBox(
+        width: 100,
+        child: Row(
+          children: <Widget>[
+            buildEditButton(context),
+            buildDeleteButton(context),
+          ],
         ),
       ),
     );
   }
 
-  // Widget buildDeleteButton(BuildContext context) {
-  //   return IconButton(
-  //     icon: const Icon(Icons.delete_forever),
-  //     onPressed: () async {
-  //       print('Delete a product');
-  //     },
-  //     color: Theme.of(context).errorColor,
-  //   );
-  // }
   Widget buildDeleteButton(BuildContext context) {
     return IconButton(
-      icon: const Icon(Icons.delete_forever),
+      icon: const Icon(Icons.delete),
       onPressed: () {
         context.read<ProductsManager>().deleteProduct(product.id!);
         ScaffoldMessenger.of(context)
