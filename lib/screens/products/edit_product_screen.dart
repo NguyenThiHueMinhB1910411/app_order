@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_food/screens/shared/dialog_utils.dart';
 import 'package:provider/provider.dart';
 
 import 'package:order_food/models/Product.dart';
@@ -16,10 +17,9 @@ class EditProductScreen extends StatefulWidget {
         id: null,
         title: '',
         price: 0,
-        image: "assets/images/dau_da_xay.png",
-        type: "Đá xay",
-        description:
-            " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+        image: '',
+        type: '',
+        description: '',
       );
     } else {
       this.product = product;
@@ -32,14 +32,14 @@ class EditProductScreen extends StatefulWidget {
 }
 
 class _EditProductScreenState extends State<EditProductScreen> {
-  final _imageController = TextEditingController();
-  final _imageFocusNode = FocusNode();
+  final _imageUrlController = TextEditingController();
+  final _imageUrlFocusNode = FocusNode();
   final _editForm = GlobalKey<FormState>();
   late Product _editedProduct;
   var _isLoading = false;
 
   bool _isValidimage(String value) {
-    return (value.startsWith('http') || value.startsWith('https')) &&
+    return (value.startsWith('assets') || value.startsWith('asset')) &&
         (value.endsWith('.png') ||
             value.endsWith('.jpg') ||
             value.endsWith('.jpeg'));
@@ -47,9 +47,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   @override
   void initState() {
-    _imageFocusNode.addListener(() {
-      if (!_imageFocusNode.hasFocus) {
-        if (!_isValidimage(_imageController.text)) {
+    _imageUrlFocusNode.addListener(() {
+      if (!_imageUrlFocusNode.hasFocus) {
+        if (!_isValidimage(_imageUrlController.text)) {
           return;
           // anh hop le -> ve lai man hinh de hien preview
 
@@ -59,14 +59,14 @@ class _EditProductScreenState extends State<EditProductScreen> {
     });
     _editedProduct = widget.product;
 
-    _imageController.text = _editedProduct.image;
+    _imageUrlController.text = _editedProduct.image;
     super.initState();
   }
 
   @override
   void dispose() {
-    _imageController.dispose();
-    _imageFocusNode.dispose();
+    _imageUrlController.dispose();
+    _imageUrlFocusNode.dispose();
     super.dispose();
   }
 
@@ -133,12 +133,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
         if (value!.isEmpty) {
           return 'Please enter a price';
         }
-        if (double.tryParse(value) == null) {
-          return 'Please enter a valid number.';
-        }
-        if (double.parse(value) <= 0) {
-          return 'Please enter a number greater than zero.';
-        }
         return null;
       },
       onSaved: (value) {
@@ -147,7 +141,47 @@ class _EditProductScreenState extends State<EditProductScreen> {
     );
   }
 
-  //ham buildProductPreview();
+  TextFormField buildDescriptionField() {
+    return TextFormField(
+      initialValue: _editedProduct.description,
+      decoration: const InputDecoration(labelText: 'Description'),
+      maxLines: 3,
+      keyboardType: TextInputType.multiline,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter a description.';
+        }
+        if (value.length < 10) {
+          return 'Should be at least 10 characters long.';
+        }
+        return null;
+      },
+      onSaved: (value) {
+        _editedProduct = _editedProduct.copyWith(description: value);
+      },
+    );
+  }
+
+  TextFormField buildImageURLField() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: 'Image URL'),
+      keyboardType: TextInputType.url,
+      textInputAction: TextInputAction.done,
+      controller: _imageUrlController,
+      focusNode: _imageUrlFocusNode,
+      onFieldSubmitted: (value) => _saveForm(),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Please enter an image URL.';
+        }
+        return null;
+      },
+      onSaved: (value) {
+        _editedProduct = _editedProduct.copyWith(image: value);
+      },
+    );
+  }
+
   Widget buildProductPreview() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -165,39 +199,19 @@ class _EditProductScreenState extends State<EditProductScreen> {
               color: Colors.grey,
             ),
           ),
-          child: _imageController.text.isEmpty
+          child: _imageUrlController.text.isEmpty
               ? const Text('Enter a URL')
               : FittedBox(
-                  child: Image.network(
-                    _imageController.text,
+                  child: Image.asset(
+                    _imageUrlController.text,
                     fit: BoxFit.cover,
                   ),
                 ),
         ),
         Expanded(
-          child: buildimageField(),
+          child: buildImageURLField(),
         )
       ],
-    );
-  }
-
-  TextFormField buildimageField() {
-    return TextFormField(
-      decoration: const InputDecoration(labelText: 'Image URL'),
-      keyboardType: TextInputType.url,
-      textInputAction: TextInputAction.done,
-      controller: _imageController,
-      focusNode: _imageFocusNode,
-      onFieldSubmitted: (value) => _saveForm(),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'Please enter an image URL.';
-        }
-        return null;
-      },
-      onSaved: (value) {
-        _editedProduct = _editedProduct.copyWith(image: value);
-      },
     );
   }
 
@@ -212,7 +226,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
     setState(() {
       _isLoading = true;
     });
-    print(999);
     try {
       final productsManager = context.read<ProductsManager>();
       if (_editedProduct.id != null) {
@@ -229,23 +242,5 @@ class _EditProductScreenState extends State<EditProductScreen> {
     if (mounted) {
       Navigator.of(context).pop();
     }
-  }
-
-  Future<void> showErrorDialog(BuildContext context, String message) {
-    return showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('An Error Occurred'),
-        content: Text(message),
-        actions: <Widget>[
-          TextButton(
-            child: const Text('Okay'),
-            onPressed: () {
-              Navigator.of(ctx).pop();
-            },
-          )
-        ],
-      ),
-    );
   }
 }

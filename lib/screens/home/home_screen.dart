@@ -1,18 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/constants.dart';
-import 'package:order_food/models/Category.dart';
 import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/components/category.dart';
 import 'package:order_food/screens/home/components/category_list.dart';
-import 'package:order_food/screens/home/components/column_category_list.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
+import 'package:order_food/screens/products/products_manager.dart';
+import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   //
   static const routeName = '/home';
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late Future<void> _fetchProducts;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchProducts = context.read<ProductsManager>().fetchProducts(false);
+  }
+
   @override
   Widget build(BuildContext context) {
     const outlineInputBorder = const OutlineInputBorder(
@@ -20,85 +32,101 @@ class HomeScreen extends StatelessWidget {
       borderSide: BorderSide.none,
     );
 
-    return Scaffold(
-      appBar: homeAppBar(context),
-      resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Form(
-                      child: TextFormField(
-                    decoration: InputDecoration(
-                        hintText: "Search item...",
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: outlineInputBorder,
-                        focusedBorder: outlineInputBorder,
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: Icon(Icons.search),
-                        ),
-                        suffixIcon: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 12),
-                          child: SizedBox(
-                            height: 48,
-                            width: 48,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: const RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10))),
-                              ),
-                              child: Icon(
-                                Icons.filter_alt,
-                                color: Colors.white,
-                              ),
-                            ),
+    return FutureBuilder(
+        future: _fetchProducts,
+        builder: (ctx, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return RefreshIndicator(
+            onRefresh: () => _fetchProducts,
+            child: Scaffold(
+              appBar: homeAppBar(context),
+              resizeToAvoidBottomInset: false,
+              body: SingleChildScrollView(
+                  child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 20, bottom: 20),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: Form(
+                                child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Search item...",
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  border: outlineInputBorder,
+                                  focusedBorder: outlineInputBorder,
+                                  prefixIcon: Padding(
+                                    padding: const EdgeInsets.all(12),
+                                    child: Icon(Icons.search),
+                                  ),
+                                  suffixIcon: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 12),
+                                    child: SizedBox(
+                                      height: 48,
+                                      width: 48,
+                                      child: ElevatedButton(
+                                        onPressed: () {},
+                                        style: ElevatedButton.styleFrom(
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10))),
+                                        ),
+                                        child: Icon(
+                                          Icons.filter_alt,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
+                            )),
                           ),
-                        )),
-                  )),
-                ),
 
-                // ////////////
-                Banner(),
-                /////////
-                const Categories(),
-                const SizedBox(
-                  height: 10,
+                          // ////////////
+                          Banner(),
+                          /////////
+                          const Categories(),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TraSua(),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Tra(),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          DaXay(),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Latte(),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                TraSua(),
-                const SizedBox(
-                  height: 10,
-                ),
-                Tra(),
-                const SizedBox(
-                  height: 10,
-                ),
-                DaXay(),
-                const SizedBox(
-                  height: 10,
-                ),
-                Latte(),
-                const SizedBox(
-                  height: 10,
-                ),
-              ],
+              )),
+              bottomNavigationBar: BottomNavBar(),
             ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomNavBar(),
-    );
+          );
+        });
   }
 
   Container Banner() {
@@ -120,6 +148,8 @@ class TraSua extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var products = context.read<ProductsManager>().items;
+
     return Column(
       children: [
         SectionTitle(
@@ -131,26 +161,22 @@ class TraSua extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-                show_product.length,
+                products.length,
                 (index) => Padding(
                       padding: const EdgeInsets.only(left: 20),
-                      child: ProductCard(
-                        image: show_product[index].image,
-                        title: show_product[index].title,
-                        price: show_product[index].price,
-                        bgColor: show_product[index].bgColor,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return DetailsScreen(show_product[index]);
-                                // return DetailsScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
+                      child: ProductCard(products[index]
+                          // press: () {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) {
+                          //         return DetailsScreen(show_product[index]);
+                          //         // return DetailsScreen();
+                          //       },
+                          //     ),
+                          //   );
+                          // },
+                          ),
                     )),
           ),
         )
@@ -166,6 +192,8 @@ class Tra extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var products = context.read<ProductsManager>().items;
+
     return Column(
       children: [
         SectionTitle(
@@ -177,26 +205,25 @@ class Tra extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-                show_product.length,
+                products.length,
                 (index) => Padding(
                       padding: const EdgeInsets.only(left: 20),
-                      child: ProductCard(
-                        image: show_product[index].image,
-                        title: show_product[index].title,
-                        price: show_product[index].price,
-                        bgColor: show_product[index].bgColor,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                //return HomeScreen();
-                                return DetailsScreen(show_product[index]);
-                              },
-                            ),
-                          );
-                        },
-                      ),
+                      child: ProductCard(products[index]
+                          // image: show_product[index].image,
+                          // title: show_product[index].title,
+                          // price: show_product[index].price,
+                          // press: () {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) {
+                          //         //return HomeScreen();
+                          //         return DetailsScreen(show_product[index]);
+                          //       },
+                          //     ),
+                          //   );
+                          // },
+                          ),
                     )),
           ),
         )
@@ -212,6 +239,8 @@ class DaXay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var products = context.read<ProductsManager>().items;
+
     return Column(
       children: [
         SectionTitle(
@@ -223,26 +252,22 @@ class DaXay extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-                show_product.length,
+                products.length,
                 (index) => Padding(
                       padding: const EdgeInsets.only(left: 20),
-                      child: ProductCard(
-                        image: show_product[index].image,
-                        title: show_product[index].title,
-                        price: show_product[index].price,
-                        bgColor: show_product[index].bgColor,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return DetailsScreen(show_product[index]);
-                                // return DetailsScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
+                      child: ProductCard(products[index]
+                          // press: () {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) {
+                          //         return DetailsScreen(show_product[index]);
+                          //         // return DetailsScreen();
+                          //       },
+                          //     ),
+                          //   );
+                          // },
+                          ),
                     )),
           ),
         )
@@ -251,6 +276,51 @@ class DaXay extends StatelessWidget {
   }
 }
 
+// class DaXay extends StatelessWidget {
+//   const DaXay({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         SectionTitle(
+//           title: "Đá xay",
+//           pressSeeAll: () {},
+//         ),
+//         SingleChildScrollView(
+//           scrollDirection: Axis.horizontal,
+//           child: Row(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: List.generate(
+//                 show_product.length,
+//                 (index) => Padding(
+//                       padding: const EdgeInsets.only(left: 20),
+//                       child: ProductCard(show_product[index]
+//                           // image: show_product[index].image,
+//                           // title: show_product[index].title,
+//                           // price: show_product[index].price,
+//                           // press: () {
+//                           //   Navigator.push(
+//                           //     context,
+//                           //     MaterialPageRoute(
+//                           //       builder: (context) {
+//                           //         return DetailsScreen(show_product[index]);
+//                           //         // return DetailsScreen();
+//                           //       },
+//                           //     ),
+//                           //   );
+//                           // },
+//                           ),
+//                     )),
+//           ),
+//         )
+//       ],
+//     );
+//   }
+// }
+
 class Latte extends StatelessWidget {
   const Latte({
     Key? key,
@@ -258,6 +328,8 @@ class Latte extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var products = context.read<ProductsManager>().items;
+
     return Column(
       children: [
         SectionTitle(
@@ -269,26 +341,22 @@ class Latte extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
-                show_product.length,
+                products.length,
                 (index) => Padding(
                       padding: const EdgeInsets.only(left: 20),
-                      child: ProductCard(
-                        image: show_product[index].image,
-                        title: show_product[index].title,
-                        price: show_product[index].price,
-                        bgColor: show_product[index].bgColor,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return DetailsScreen(show_product[index]);
-                                // return DetailsScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
+                      child: ProductCard(products[index]
+                          // press: () {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) {
+                          //         return DetailsScreen(show_product[index]);
+                          //         // return DetailsScreen();
+                          //       },
+                          //     ),
+                          //   );
+                          // },
+                          ),
                     )),
           ),
         )
@@ -298,24 +366,28 @@ class Latte extends StatelessWidget {
 }
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.bgColor,
-    required this.price,
-    required this.press,
-  }) : super(key: key);
+  final Product product;
+  const ProductCard(this.product, {super.key});
 
-  final String image, title;
-  final Color bgColor;
-  final double price;
-  final VoidCallback press;
+  // final String image, title;
+
+  // final double price;
+  // final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: press,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              //return HomeScreen();
+              return DetailsScreen(product);
+            },
+          ),
+        );
+      },
       child: Container(
         width: 154,
         padding: const EdgeInsets.all(10),
@@ -330,7 +402,7 @@ class ProductCard extends StatelessWidget {
                 //color: bgColor,
                 borderRadius: const BorderRadius.all(Radius.circular(50)),
               ),
-              child: Image.asset(image),
+              child: Image.asset(product.image),
               //height: 132,
               height: 180,
             ),
@@ -339,7 +411,7 @@ class ProductCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    title,
+                    product.title,
                     style: const TextStyle(
                       color: Colors.black,
                     ),
@@ -349,7 +421,7 @@ class ProductCard extends StatelessWidget {
                   width: 20,
                 ),
                 Text(
-                  price.toString(),
+                  product.price.toString(),
                   style: Theme.of(context).textTheme.subtitle2,
                 )
               ],

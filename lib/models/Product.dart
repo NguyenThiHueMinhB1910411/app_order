@@ -1,13 +1,11 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 
 class Product {
   final String? id;
   final String image, title;
   final double price;
   final String type;
-  final Color bgColor;
   final String description;
 
   Map<String, dynamic> toJson() {
@@ -16,7 +14,6 @@ class Product {
       'type': type,
       'price': price,
       'image': image,
-      'bgColor': bgColor,
       'description': description,
     };
   }
@@ -40,7 +37,6 @@ class Product {
     required this.price,
     required this.type,
     required this.image,
-    this.bgColor = const Color(0xFFEFEFF2),
     required this.description,
   });
 
@@ -50,7 +46,6 @@ class Product {
     String? title,
     double? price,
     String? type,
-    Color? bgColor,
     String? description,
   }) {
     return Product(
@@ -59,23 +54,19 @@ class Product {
       title: title ?? this.title,
       price: price ?? this.price,
       type: type ?? this.type,
-      bgColor: bgColor ?? this.bgColor,
       description: description ?? this.description,
     );
   }
 }
 
 List<Product> show_product = [
-  //Tra sua
   Product(
     id: "01",
     image: "assets/images/tra_sua_truyen_thong.png",
     title: "Trà sữa truyền thống",
     price: 25000,
     type: " Trà sữa",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "02",
@@ -83,9 +74,7 @@ List<Product> show_product = [
     title: "Trà sữa matcha",
     price: 35000,
     type: " Trà sữa",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "03",
@@ -93,9 +82,7 @@ List<Product> show_product = [
     title: "Trà sữa trân châu hoàng kim",
     price: 35000,
     type: " Trà sữa",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "04",
@@ -103,9 +90,7 @@ List<Product> show_product = [
     title: "Trà sữa sô cô la",
     price: 30000,
     type: " Trà sữa",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "05",
@@ -113,18 +98,16 @@ List<Product> show_product = [
     title: "Trà sữa dâu",
     price: 28000,
     type: " Trà sữa",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
-  // Product(
-  //   id: "06",
-  //   image: "assets/images/tra_sua_dao.png",
-  //   title: "Trà sữa đào",
-  //   price: 25000,
-  //   type: " Trà sữa",
-  //   bgColor: const Color(0xFFEFEFF2),
-  // ),
+  Product(
+    id: "06",
+    image: "assets/images/tra_sua_dao.png",
+    title: "Trà sữa đào",
+    price: 25000,
+    type: " Trà sữa",
+    description: " ",
+  ),
   //Da xay
   Product(
     id: "07",
@@ -132,9 +115,7 @@ List<Product> show_product = [
     title: "Strawberry Cookie Smoothie",
     price: 25000,
     type: " Đá xay",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "08",
@@ -142,9 +123,7 @@ List<Product> show_product = [
     title: "Strawberry Oreo Smoothie",
     price: 35000,
     type: " Đá xay",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "09",
@@ -152,9 +131,7 @@ List<Product> show_product = [
     title: "Okinawa Milk Foam Smoothie",
     price: 35000,
     type: " Đá xay",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "10",
@@ -162,9 +139,7 @@ List<Product> show_product = [
     title: "Khoai môn đá xay",
     price: 30000,
     type: " Đá xay",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "11",
@@ -172,18 +147,16 @@ List<Product> show_product = [
     title: "Xoài đá xay",
     price: 28000,
     type: " Đá xay",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
-  // Product(
-  //   id: "12",
-  //   image: "assets/images/yakult_dao_da_xay.png",
-  //   title: "Yakult Đào Đá Xay",
-  //   price: 25000,
-  //  type: " Đá xay",
-  //   bgColor: const Color(0xFFEFEFF2),
-  // ),
+  Product(
+    id: "12",
+    image: "assets/images/yakult_dao_da_xay.png",
+    title: "Yakult Đào Đá Xay",
+    price: 25000,
+    type: " Đá xay",
+    description: " ",
+  ),
   //Trà
   Product(
     id: "13",
@@ -191,9 +164,7 @@ List<Product> show_product = [
     title: "Trà Alisan Xoài",
     price: 25000,
     type: " Trà",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "14",
@@ -201,9 +172,7 @@ List<Product> show_product = [
     title: "Trà bí đao",
     price: 25000,
     type: " Trà",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "15",
@@ -211,9 +180,7 @@ List<Product> show_product = [
     title: "Trà đen",
     price: 25000,
     type: " Trà",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "16",
@@ -221,9 +188,7 @@ List<Product> show_product = [
     title: "Trà gạo rang",
     price: 25000,
     type: " Trà",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "17",
@@ -231,18 +196,16 @@ List<Product> show_product = [
     title: "Trà xanh",
     price: 25000,
     type: " Trà",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
-  // Product(
-  //   id: "18",
-  //   image: "assets/images/tra_xanh_long_nhan_tao_do.png",
-  //   title: "Trà xanh long nhãn táo đỏ",
-  //   price: 25000,
-  //   type: " Trà",
-  //   bgColor: const Color(0xFFEFEFF2),
-  // ),
+  Product(
+    id: "18",
+    image: "assets/images/tra_xanh_long_nhan_tao_do.png",
+    title: "Trà xanh long nhãn táo đỏ",
+    price: 25000,
+    type: " Trà",
+    description: " ",
+  ),
 
   //latte
   Product(
@@ -251,9 +214,7 @@ List<Product> show_product = [
     title: "Creme Brulee Matcha",
     price: 25000,
     type: " Latte",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "20",
@@ -261,9 +222,7 @@ List<Product> show_product = [
     title: "Toffee Black Tea Latte",
     price: 25000,
     type: " Latte",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
   Product(
     id: "21",
@@ -271,8 +230,6 @@ List<Product> show_product = [
     title: "Creme Brulee Latte",
     price: 25000,
     type: " Latte",
-    bgColor: const Color(0xFFEFEFF2),
-    description:
-        " Trà sữa là loại thức uống đa dạng được tìm thấy ở nhiều nền văn hóa, bao gồm một vài cách kết hợp giữa trà và sữa. Các loại thức uống khác nhau tùy thuộc vào lượng thành phần chính của mỗi loại, phương pháp pha chế, và các thành phần khác được thêm vào (thay đổi từ đường hoặc mật ong thành muối hoặc bạch đậu khấu-thảo quả). Bột trà sữa pha sẵn là một sản phẩm được sản xuất hàng ",
+    description: " ",
   ),
 ];

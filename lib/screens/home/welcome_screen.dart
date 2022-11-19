@@ -74,10 +74,10 @@ class WelcomeScreen extends StatelessWidget {
                             // ),
                             SizedBox(width: 10),
                             Text(
-                              "THE BEST BEVERIDGE..s",
+                              "WELCOME TO HM DRINK",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 30,
+                                fontSize: 20,
                               ),
                             ),
                           ],
@@ -132,14 +132,17 @@ class WelcomeScreen extends StatelessWidget {
                       child: Container(
                         margin: EdgeInsets.only(left: 20, right: 20, top: 50),
                         alignment: Alignment.center,
-                        height: 50,
+                        height: 55,
                         decoration: BoxDecoration(
                           color: Colors.green,
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Text(
                           "Login",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     )

@@ -206,8 +206,10 @@ import 'package:order_food/screens/home/components/app_bar.dart';
 import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_food/screens/home/welcome_screen.dart';
 import 'package:order_food/screens/orders/order_manager.dart';
 import 'package:order_food/screens/orders/orders_screen.dart';
+import 'package:order_food/screens/products/user_products_screen.dart';
 
 class AuthInfo extends StatefulWidget {
   const AuthInfo({super.key});
@@ -240,19 +242,16 @@ class _AuthInfoState extends State<AuthInfo> {
   }
 
   Widget _buildLogout(auth) {
-    return Consumer<AuthManager>(
-      builder: (context, value, child) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: detailsAppBar(context),
+          //appBar: detailsAppBar(context),
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: 
-            Column(
+            child: Column(
               children: [
                 Container(
-                  height: 250,
+                  height: 320,
                   width: 150,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -271,29 +270,28 @@ class _AuthInfoState extends State<AuthInfo> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 0.0),
                   child: Container(
-                    margin: EdgeInsets.only(right: 20, top: 20, left: 20),
+                    margin: EdgeInsets.only(right: 20, top: 50, left: 20),
                     alignment: Alignment.bottomCenter,
                     child: Column(
                       children: [
                         GestureDetector(
                           onTap: () => {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return AuthScreen();
-                                },
-                              ),
-                            ),
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) {
+                            //       return AuthScreen();
+                            //     },
+                            //   ),
+                            // ),
                           },
-                          child:
-                           Container(
+                          child: Container(
                             margin:
-                                EdgeInsets.only(left: 20, right: 20, top: 0),
+                                EdgeInsets.only(left: 20, right: 20, top: 20),
                             alignment: Alignment.center,
                             height: 50,
                             decoration: BoxDecoration(
-                              color: Colors.green,
+                              color: Colors.green[700],
                               borderRadius: BorderRadius.circular(50),
                             ),
                             child: Padding(
@@ -303,23 +301,23 @@ class _AuthInfoState extends State<AuthInfo> {
                                 children: <Widget>[
                                   IconButton(
                                     onPressed: () {
-                                      // Navigator.push(
-                                      //   context,
-                                      //   MaterialPageRoute(
-                                      //     builder: (context) {
-                                      //       return AuthScreen();
-                                      //     },
-                                      //   ),
-                                      // );
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return HomeScreen();
+                                          },
+                                        ),
+                                      );
                                     },
-                                    icon: const Icon(Icons.settings),
+                                    icon: const Icon(Icons.home),
                                     color: Colors.white,
                                   ),
                                   SizedBox(
                                     width: 8,
                                   ),
                                   Text(
-                                    "Settings",
+                                    "Home",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -331,11 +329,11 @@ class _AuthInfoState extends State<AuthInfo> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 25),
                           alignment: Alignment.center,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Colors.yellow[700],
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Padding(
@@ -345,12 +343,12 @@ class _AuthInfoState extends State<AuthInfo> {
                               children: <Widget>[
                                 IconButton(
                                   onPressed: () {},
-                                  icon: const Icon(Icons.help),
+                                  icon: const Icon(Icons.settings),
                                   color: Colors.white,
                                 ),
                                 SizedBox(width: 10),
                                 Text(
-                                  "Help",
+                                  "Setting",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -361,13 +359,12 @@ class _AuthInfoState extends State<AuthInfo> {
                           ),
                         ),
                         SizedBox(width: 8),
-
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 25),
                           alignment: Alignment.center,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Colors.purple[700],
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Padding(
@@ -381,17 +378,18 @@ class _AuthInfoState extends State<AuthInfo> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) {
-                                          return OrdersScreen();
+                                          // return UserProductsScreen();
+                                          return UserProductsScreen();
                                         },
                                       ),
                                     );
                                   },
-                                  icon: const Icon(Icons.badge),
+                                  icon: const Icon(Icons.add),
                                   color: Colors.white,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
-                                  "My orders",
+                                  "Add product",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -402,11 +400,11 @@ class _AuthInfoState extends State<AuthInfo> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                          margin: EdgeInsets.only(left: 20, right: 20, top: 25),
                           alignment: Alignment.center,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Colors.red[700],
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Padding(
@@ -420,7 +418,7 @@ class _AuthInfoState extends State<AuthInfo> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) {
-                                          return AuthScreen();
+                                          return WelcomeScreen();
                                         },
                                       ),
                                     );
@@ -449,7 +447,6 @@ class _AuthInfoState extends State<AuthInfo> {
           ),
           bottomNavigationBar: BottomNavBar(),
         );
-      },
-    );
+      }
   }
-}
+

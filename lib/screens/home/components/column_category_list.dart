@@ -2,53 +2,104 @@ import 'package:flutter/material.dart';
 import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/home/details/details-screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_food/screens/products/products_manager.dart';
+import 'package:provider/provider.dart';
 
-class AllProductInListItemColumn extends StatelessWidget {
-  const AllProductInListItemColumn({
-    Key? key,
-  }) : super(key: key);
+//  class AllProductInListItemColumn extends StatefulWidget {
+//    AllProductInListItemColumn({
+//     Key? key,
+//   }) : super(key: key);
+class AllProductInListItemColumn extends StatefulWidget {
+  const AllProductInListItemColumn({super.key});
 
   @override
+  State<AllProductInListItemColumn> createState() =>
+      _AllProductInListItemColumnState();
+}
+
+class _AllProductInListItemColumnState
+    extends State<AllProductInListItemColumn> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          "Trà sữa",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w200, fontSize: 50),
-        ),
-        SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 80),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: List.generate(
-                  show_product.length,
-                  (index) => Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: ProductCard(
-                          image: show_product[index].image,
-                          title: show_product[index].title,
-                          price: show_product[index].price,
-                          bgColor: show_product[index].bgColor,
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return DetailsScreen(show_product[index]);
-                                  // return DetailsScreen();
-                                },
-                              ),
-                            );
-                          },
+    var products = context.read<ProductsManager>().items;
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            products.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: GestureDetector(
+                child: Container(
+                  width: 154,
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        decoration: const BoxDecoration(
+                          //color: bgColor,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
                         ),
-                      )),
+                        child: Image.asset(products[index].image),
+                        //height: 132,
+                        height: 180,
+                      ),
+                      const SizedBox(height: 40),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              products[index].title,
+                              style: const TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            products[index].price.toString(),
+                            style: Theme.of(context).textTheme.subtitle2,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // image: productsManager.,
+              // title: products[index].title,
+              // price: products[index].price,
+              // press: () {
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) {
+              //         return DetailsScreen(products[index]);
+              //         // return DetailsScreen();
+              //       },
+              //     ),
+              //   );
+              // },
             ),
+          )
+
+          // [
+          //   Text(
+          //     "Trà sữa",
+          //     style: TextStyle(
+          //         color: Colors.black, fontWeight: FontWeight.w200, fontSize: 50),
+          //   ),
+
+          // ],
           ),
-        )
-      ],
     );
   }
 }

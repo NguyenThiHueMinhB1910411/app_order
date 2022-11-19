@@ -22,3 +22,5 @@ export 'auth/auth_screen.dart';
 export 'auth/auth_manager.dart';
 
 export 'splash_screen.dart';
+
+export 'package:order_food/screens/products/edit_product_screen.dart';

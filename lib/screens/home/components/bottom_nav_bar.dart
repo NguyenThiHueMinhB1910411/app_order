@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:order_food/screens/auth/auth_screen.dart';
 //import 'package:order_food/screens/home/home-screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_food/screens/home/welcome_screen.dart';
 import 'package:order_food/screens/sign_in/sign_in_screen.dart';
 import 'package:order_food/screens/sign_up/sign_up.dart';
 import 'package:order_food/screens/cart/cart_screen.dart';
@@ -43,14 +44,14 @@ class BottomNavBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.favorite),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return AuthInfo();
-                  },
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) {
+              //       return AuthInfo();
+              //     },
+              //   ),
+              // );
             },
           ),
           IconButton(
@@ -76,7 +77,7 @@ class BottomNavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return AuthScreen();
+                    return AuthInfo();
                   },
                 ),
               );

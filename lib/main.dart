@@ -54,11 +54,16 @@ import 'dart:async';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:order_food/constants.dart';
+import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/home/welcome_screen.dart';
 import 'package:order_food/screens/orders/orders_screen.dart';
+import 'package:order_food/screens/products/product_grid_tile.dart';
 import 'package:order_food/screens/products/products_manager.dart';
+import 'package:order_food/screens/products/user_product_list_tile.dart';
+import 'package:order_food/screens/products/user_products_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/Screens.dart';
+import 'package:order_food/screens/products/product_grid_tile.dart';
 
 Future<void> main() async {
   await dotenv.load();
@@ -72,11 +77,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(
-            create: (ctx) => ProductsManager(),
-          ),
+          // ChangeNotifierProvider(
+          //   create: (ctx) => ProductsManager(),
+          // ),
           ChangeNotifierProvider(
             create: (ctx) => AuthManager(),
+          ),
+          ChangeNotifierProxyProvider<AuthManager, ProductsManager>(
+            create: (ctx) => ProductsManager(),
+            update: (ctx, authManager, productsManager) {
+              productsManager!.authToken = authManager.authToken;
+              return productsManager;
+            },
           ),
           ChangeNotifierProvider(
             create: (ctx) => CartManager(),
@@ -97,12 +109,27 @@ class MyApp extends StatelessWidget {
                 bodyText2: TextStyle(color: ksecondaryColor),
               ),
             ),
-            //home: HomeScreen(),
+            //home: UserProductsScreen(),
             home: WelcomeScreen(),
             routes: {
               CartScreen.routeName: (ctx) => const CartScreen(),
               OrdersScreen.routeName: (ctx) => const OrdersScreen(),
               // User
+            },
+            onGenerateRoute: (settings) {
+              if (settings.name == EditProductScreen.routeName) {
+                final productId = settings.arguments as String?;
+                return MaterialPageRoute(
+                  builder: (ctx) {
+                    return EditProductScreen(
+                      productId != null
+                          ? ctx.read<ProductsManager>().findById(productId)
+                          : null,
+                    );
+                  },
+                );
+              }
+              return null;
             },
 
             // home: authManager.isAuth

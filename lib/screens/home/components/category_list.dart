@@ -7,11 +7,26 @@ import 'package:order_food/screens/home/components/column_category_list.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 import 'package:order_food/screens/home/home_screen.dart';
 import 'package:order_food/screens/home/components/category_list.dart';
+import 'package:order_food/screens/products/products_manager.dart';
+import 'package:provider/provider.dart';
 
-class ShowCategoryList extends StatelessWidget {
+class ShowCategoryList extends StatefulWidget {
+  @override
+  State<ShowCategoryList> createState() => _ShowCategoryListState();
+}
+
+class _ShowCategoryListState extends State<ShowCategoryList> {
+  late Future<void> _fetchProducts;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchProducts = context.read<ProductsManager>().fetchProducts(false);
+  }
+
   @override
   Widget build(BuildContext context) {
-    const outlineInputBorder = const OutlineInputBorder(
+    const outlineInputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(10)),
       borderSide: BorderSide.none,
     );
@@ -19,25 +34,24 @@ class ShowCategoryList extends StatelessWidget {
     return Scaffold(
       appBar: detailsAppBar(context),
       resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AllProductInListItemColumn(),
-                const SizedBox(
-                  height: 10,
+      body: FutureBuilder(
+          future: _fetchProducts,
+          builder: (ctx, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return RefreshIndicator(
+              onRefresh: () => _fetchProducts,
+              child: const SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: AllProductInListItemColumn(),
                 ),
-              ],
-            ),
-          ),
-        ),
-      ),
+              ),
+            );
+          }),
       bottomNavigationBar: BottomNavBar(),
     );
   }
