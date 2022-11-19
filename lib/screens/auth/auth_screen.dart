@@ -72,15 +72,15 @@ class AuthScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 300,
-            // decoration: BoxDecoration(
-            //   color: Colors.green[500],
-            // ),
+            decoration: BoxDecoration(
+              color: Colors.green[500],
+            ),
             child: Card(
-                // child: Image.asset(
-                //   'assets/images/green_milk_tea_canva.png',
-                //   fit: BoxFit.cover,
-                // ),
-                ),
+              child: Image.asset(
+                'assets/images/green_milk_tea_canva.png',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           SingleChildScrollView(
             child: SizedBox(
@@ -90,11 +90,13 @@ class AuthScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Flexible(
-                    flex: deviceSize.width > 600 ? 2 : 1,
-                    // child: const AuthCard(),
-                    child: AuthCard(),
-                  ),
+                  AuthCard(),
+
+                  // Flexible(
+                  //   flex: deviceSize.width > 600 ? 2 : 1,
+                  //   // child: const AuthCard(),
+                  //   child: AuthCard(),
+                  // ),
                 ],
               ),
             ),
