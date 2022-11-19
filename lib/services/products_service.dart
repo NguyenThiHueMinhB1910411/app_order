@@ -179,8 +179,10 @@ class ProductsService extends FirebaseService {
     final List<Product> products = [];
 
     try {
-      //final filters =
+      // final filters =
       // filterByUser ? 'orderBy="creatorId"&equalTo="$userId"' : '';
+      print(1234567890);
+      print(token);
       final productsUrl = Uri.parse('$databaseUrl/products.json?auth=$token');
       final response = await http.get(productsUrl);
       final productsMap = json.decode(response.body) as Map<String, dynamic>;

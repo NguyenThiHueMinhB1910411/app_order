@@ -43,8 +43,6 @@ class ProductsManager with ChangeNotifier {
     notifyListeners();
   }
 
-
-
   // void addProduct(Product product) {
   //   _items.add(
   //     product.copyWith(
@@ -55,7 +53,6 @@ class ProductsManager with ChangeNotifier {
   // }
 
   //update
- 
 
   // void updateProduct(Product product) {
   //   final index = _items.indexWhere((item) => item.id == product.id);
@@ -87,6 +84,7 @@ class ProductsManager with ChangeNotifier {
       notifyListeners();
     }
   }
+
   Future<void> updateProduct(Product product) async {
     final index = _items.indexWhere((item) => item.id == product.id);
     if (index >= 0) {
@@ -124,6 +122,7 @@ class ProductsManager with ChangeNotifier {
   }
 
   Product findById(String id) {
+    print(" $id");
     return _items.firstWhere((prod) => prod.id == id);
   }
 }

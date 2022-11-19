@@ -18,21 +18,17 @@ class UserProductsScreen extends StatelessWidget {
     // final productsManager = ProductsManager();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Products'),
+        backgroundColor: Colors.green,
+        title: const Text('All product'),
         actions: <Widget>[
           buildAddButton(context),
         ],
       ),
       //
 
-      drawer: const AppDrawer(),
+      // drawer: const AppDrawer(),
+      // appBar: detailsAppBar(context),
 
-      // body: RefreshIndicator(
-      //   onRefresh: () async => print('refresh products'),
-      //   child: buildUserProductListView(),
-      // ),
-
-      //LAB4
       body: FutureBuilder(
         future: _refreshProducts(context),
         builder: (ctx, snapshot) {
@@ -59,7 +55,6 @@ class UserProductsScreen extends StatelessWidget {
             UserProductListTile(
               product.items[i],
             ),
-            
           ],
         ),
       );
@@ -82,10 +77,10 @@ class UserProductsScreen extends StatelessWidget {
   Widget buildAddButton(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.add),
+      color: Colors.white,
       onPressed: () {
         Navigator.push(context,
             MaterialPageRoute(builder: ((context) => EditProductScreen(null))));
-            
       },
     );
   }
