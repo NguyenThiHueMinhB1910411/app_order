@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:order_food/screens/products/edit_product_screen.dart';
-import 'package:order_food/screens/shared/app_drawer.dart';
-import 'package:provider/provider.dart';
-import 'user_product_list_tile.dart';
-import 'products_manager.dart';
+import 'package:order_food/screens/Screens.dart';
 
 class UserProductsScreen extends StatelessWidget {
   static const routeName = '/user-products';

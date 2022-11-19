@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:order_food/models/Product.dart';
-import 'package:order_food/screens/home/details/details-screen.dart';
-import 'package:order_food/screens/home/home_screen.dart';
-import 'package:order_food/screens/products/products_manager.dart';
-import 'package:provider/provider.dart';
+import 'package:order_food/screens/Screens.dart';
 
 //  class AllProductInListItemColumn extends StatefulWidget {
 //    AllProductInListItemColumn({

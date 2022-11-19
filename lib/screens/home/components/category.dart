@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:order_food/models/Category.dart';
-import 'package:order_food/screens/home/components/category_list.dart';
-import 'package:order_food/screens/home/components/column_category_list.dart';
-import 'package:order_food/screens/home/details/details-screen.dart';
-import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_food/screens/Screens.dart';
 
 class Categories extends StatelessWidget {
   const Categories({

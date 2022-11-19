@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:order_food/screens/home/home_screen.dart';
-
-import 'package:flutter/material.dart';
-import 'package:order_food/screens/orders/orders_screen.dart';
-import 'package:provider/provider.dart';
-
-import '../auth/auth_manager.dart';
+import 'package:order_food/screens/Screens.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});

@@ -1,42 +1,8 @@
-// import 'package:order_food/models/cart_item.dart';
-// import 'package:order_food/screens/cart/cart_item_card.dart';
-// import 'package:flutter/foundation.dart';
-// import 'package:order_food/models/cart_item.dart';
-// import 'package:order_food/models/Product.dart';
 
-// class CartManager with ChangeNotifier {
-//   Map<String, CartItem> _items = {
-//     'p1': CartItem(
-//       id: "c1",
-//       title: 'Red Shirt',
-//       price: 29.99,
-//       quantity: 2,
-//     ),
-//   };
-
-//   int get productCount {
-//     return _items.length;
-//   }
-
-//   List<CartItem> get products {
-//     return _items.values.toList();
-//   }
-
-//   Iterable<MapEntry<String, CartItem>> get productEntries {
-//     return {..._items}.entries;
-//   }
-
-//   double get totalAmount {
-//     var total = 0.0;
-//     _items.forEach((key, cartItem) {
-//       total += cartItem.price * cartItem.quantity;
-//     });
-//     return total;
-//   }
-// }
 import 'package:order_food/models/cart_item.dart';
-import 'package:flutter/foundation.dart';
 import 'package:order_food/models/Product.dart';
+import 'package:order_food/screens/Screens.dart';
+
 
 class CartManager with ChangeNotifier {
   Map<String, CartItem> _items = {

@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:order_food/screens/Screens.dart';
-import 'package:order_food/services/products_service.dart';
 import 'package:order_food/models/Product.dart';
 
 import 'package:order_food/models/auth_token.dart';

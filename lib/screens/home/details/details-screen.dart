@@ -1,16 +1,5 @@
-import 'package:order_food/screens/Screens.dart';
-import 'package:provider/provider.dart';
-
-import 'package:flutter/material.dart';
-import 'package:order_food/constants.dart';
-import 'package:order_food/screens/cart/cart_manager.dart';
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
-import 'package:order_food/screens/home/details/components/item_image.dart';
-import 'package:order_food/screens/home/details/components/add_to_card.dart';
-import 'package:order_food/screens/home/details/components/title_price_rating.dart';
 import 'package:order_food/models/Product.dart';
-
+import 'package:order_food/screens/Screens.dart';
 class DetailsScreen extends StatefulWidget {
   static const routeName = '/product-detail';
   final Product product;

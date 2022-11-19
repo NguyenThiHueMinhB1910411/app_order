@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:order_food/screens/shared/dialog_utils.dart';
-import 'package:provider/provider.dart';
-
 import 'package:order_food/models/Product.dart';
-import 'products_manager.dart';
+import 'package:order_food/screens/Screens.dart';
 
 class EditProductScreen extends StatefulWidget {
   static const routeName = '/edit-product';

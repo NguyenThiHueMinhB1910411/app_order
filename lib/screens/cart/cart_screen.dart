@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:order_food/screens/Screens.dart';
-// import 'package:myshop/ui/orders/order_manager.dart';
-import 'package:order_food/screens/home/components/app_bar.dart';
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/cart/cart_manager.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
-// import 'package:provider/provider.dart';
-
-import 'cart_manager.dart';
-import 'cart_item_card.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
