@@ -49,7 +49,6 @@ class TitlePriceRating extends StatelessWidget {
             ),
           ),
           Container(
-            // clipper: PricerCliper(),
 
             child: Container(
               alignment: Alignment.topCenter,

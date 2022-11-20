@@ -1,8 +1,4 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:order_food/screens/cart/cart_manager.dart';
-// import 'package:order_food/models/cart_item.dart';
-// import 'package:order_food/screens/shared/dialog_utils.dart';
+
 import 'package:order_food/models/cart_item.dart';
 import 'package:order_food/screens/Screens.dart';
 

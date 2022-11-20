@@ -1,9 +1,5 @@
 import 'package:order_food/screens/Screens.dart';
 
-//  class AllProductInListItemColumn extends StatefulWidget {
-//    AllProductInListItemColumn({
-//     Key? key,
-//   }) : super(key: key);
 class AllProductInListItemColumn extends StatefulWidget {
   const AllProductInListItemColumn({super.key});
 

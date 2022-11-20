@@ -11,14 +11,6 @@ AppBar homeAppBar(BuildContext context) {
 
       // icon: SvgPicture.asset("assets/icons/menu.svg"),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return AppDrawer();
-            },
-          ),
-        );
       },
     ),
     title: RichText(

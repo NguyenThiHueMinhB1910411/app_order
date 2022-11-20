@@ -4,7 +4,6 @@ import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
 import 'package:order_food/screens/home/details/components/app_bar.dart';
 //import 'package:order_food/screens/home/home-screen.dart';
 import 'package:order_food/screens/home/home_screen.dart';
-import 'package:order_food/screens/sign_in/app_bar_sign_in.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String routeName = "/sign_up";
