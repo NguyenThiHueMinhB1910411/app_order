@@ -1,5 +1,6 @@
 import 'package:order_food/models/Product.dart';
 import 'package:order_food/screens/Screens.dart';
+
 class DetailsScreen extends StatefulWidget {
   static const routeName = '/product-detail';
   final Product product;
@@ -70,7 +71,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     width: 400,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 70, 187, 136),
+                      color: Colors.green,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Material(
