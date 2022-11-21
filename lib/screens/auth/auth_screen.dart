@@ -17,8 +17,6 @@ class AuthScreen extends StatelessWidget {
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      //  appBar: detailsAppBar(context),
-      // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Stack(
         children: <Widget>[
