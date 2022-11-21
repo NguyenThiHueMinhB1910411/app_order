@@ -17,7 +17,6 @@ export 'package:order_app/screens/home/components/category_list.dart';
 export 'package:order_app/screens/home/components/category.dart';
 export 'package:order_app/screens/home/components/column_category_list.dart';
 
-
 export 'package:order_app/screens/home/details/components/app_bar.dart';
 export 'package:order_app/screens/home/details/components/item_image.dart';
 export 'package:order_app/screens/home/details/components/title_price_rating.dart';
