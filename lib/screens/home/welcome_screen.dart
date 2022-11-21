@@ -1,4 +1,4 @@
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/screens/Screens.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static String routeName = "/welcome_screen";

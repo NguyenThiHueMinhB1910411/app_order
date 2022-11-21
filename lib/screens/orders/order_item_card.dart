@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/screens/Screens.dart';
 
 import '../../models/order_item.dart';
 

@@ -1,5 +1,5 @@
-import 'package:order_food/models/Product.dart';
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/models/Product.dart';
+import 'package:order_app/screens/Screens.dart';
 
 class HomeScreen extends StatefulWidget {
   //

@@ -1,7 +1,7 @@
-import 'package:order_food/screens/Screens.dart';
-import 'package:order_food/models/Product.dart';
+import 'package:order_app/screens/Screens.dart';
+import 'package:order_app/models/Product.dart';
 
-import 'package:order_food/models/auth_token.dart';
+import 'package:order_app/models/auth_token.dart';
 
 class ProductsManager with ChangeNotifier {
   List<Product> _items = [

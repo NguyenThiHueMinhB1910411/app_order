@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:order_food/models/Product.dart';
+import 'package:order_app/models/Product.dart';
 import '../models/auth_token.dart';
 
 import 'firebase_service.dart';

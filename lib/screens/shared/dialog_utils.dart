@@ -1,4 +1,4 @@
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/screens/Screens.dart';
 
 Future<bool?> showConfirmDialog(BuildContext context, String message) {
   return showDialog(

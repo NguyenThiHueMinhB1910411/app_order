@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:order_food/models/cart_item.dart';
-import 'package:order_food/models/order_item.dart';
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/models/cart_item.dart';
+import 'package:order_app/models/order_item.dart';
+import 'package:order_app/screens/Screens.dart';
 
 class OrdersManager with ChangeNotifier {
   final List<OrderItem> _orders = [

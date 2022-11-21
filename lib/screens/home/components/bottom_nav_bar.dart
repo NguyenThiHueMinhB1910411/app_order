@@ -1,5 +1,5 @@
-import 'package:order_food/screens/Screens.dart';
-import 'package:order_food/screens/sign_in/sign_in_screen.dart';
+import 'package:order_app/screens/Screens.dart';
+import 'package:order_app/screens/sign_in/sign_in_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({

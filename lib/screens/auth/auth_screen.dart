@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
+import 'package:order_app/screens/home/components/bottom_nav_bar.dart';
+import 'package:order_app/screens/home/details/components/app_bar.dart';
 
 import "app_banner.dart";
 
@@ -31,7 +31,7 @@ class AuthScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavBar(),
+      //  bottomNavigationBar: BottomNavBar(),
     );
   }
 }

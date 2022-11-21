@@ -1,6 +1,6 @@
 
-import 'package:order_food/models/cart_item.dart';
-import 'package:order_food/screens/Screens.dart';
+import 'package:order_app/models/cart_item.dart';
+import 'package:order_app/screens/Screens.dart';
 
 class CartItemCard extends StatelessWidget {
   final String productId;

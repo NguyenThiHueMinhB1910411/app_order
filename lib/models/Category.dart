@@ -4,12 +4,10 @@ import 'package:flutter/animation.dart';
 class Category {
   final String image, title;
   final String type;
-  // final Color bgColor;
   Category({
     required this.image,
     required this.title,
     required this.type,
-    //required this.bgColor,
   });
 
   get price => null;

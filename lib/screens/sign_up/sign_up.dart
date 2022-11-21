@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/screens/home/components/app_bar.dart';
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
-//import 'package:order_food/screens/home/home-screen.dart';
-import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_app/screens/home/components/app_bar.dart';
+import 'package:order_app/screens/home/components/bottom_nav_bar.dart';
+import 'package:order_app/screens/home/details/components/app_bar.dart';
+//import 'package:order_app/screens/home/home-screen.dart';
+import 'package:order_app/screens/home/home_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String routeName = "/sign_up";

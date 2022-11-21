@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:order_food/screens/auth/auth_info.dart';
-import 'package:order_food/screens/home/home_screen.dart';
+import 'package:order_app/screens/auth/auth_info.dart';
+import 'package:order_app/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/http_exception.dart';
