@@ -2,15 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:order_food/screens/Screens.dart';
-import 'package:order_food/screens/auth/auth_screen.dart';
-import 'package:order_food/screens/home/components/app_bar.dart';
-import 'package:order_food/screens/home/components/bottom_nav_bar.dart';
-import 'package:order_food/screens/home/details/components/app_bar.dart';
-import 'package:order_food/screens/home/home_screen.dart';
-import 'package:order_food/screens/home/welcome_screen.dart';
-import 'package:order_food/screens/orders/order_manager.dart';
-import 'package:order_food/screens/orders/orders_screen.dart';
-import 'package:order_food/screens/products/user_products_screen.dart';
+
 
 class AuthInfo extends StatefulWidget {
   const AuthInfo({super.key});
@@ -186,7 +178,7 @@ class _AuthInfoState extends State<AuthInfo> {
                                 color: Colors.white,
                                 fontSize: 20,
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),
